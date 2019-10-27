@@ -192,30 +192,30 @@ Meteor.methods({
       homeAdd:homeAdd,
       email:email
     });
-    return "성공"
+    return "원서함에 저장되었습니다"
   },
   saveEdu: function(eduData,uni_GraduNumber){
-    DB_RESUME.insert({
+    DB_RESUME.update({
       eduData,
       uni_GraduNumber:uni_GraduNumber
     });
-    return "성공"
+    return "원서함에 저장되었습니다"
   },
   saveCareer: function(careerData,com_Number){
     console.log(com_Number);
-    DB_RESUME.insert({
+    DB_RESUME.update({
       careerData,
       com_Number:com_Number
     });
-    return "성공"
+    return "원서함에 저장되었습니다"
   },
   saveSpec: function(specData,spec_Number){
     console.log(spec_Number);
-    DB_RESUME.insert({
+    DB_RESUME.update({
       specData,
       com_Number:spec_Number
     });
-    return "성공"
+    return "원서함에 저장되었습니다"
   }
   //insert 안에 id를 주고 update 사용!
 
