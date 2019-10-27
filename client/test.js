@@ -12,4 +12,4 @@ Template.test.helpers({
 })
 
 
-// 기능1구현중
+// 기능2로 바꿔...
