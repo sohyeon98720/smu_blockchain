@@ -38,7 +38,7 @@ Template.Applicant_1.events({
       birth: birth
     }
 
-    Meteor.call('saveInfo', infoData, function (err, rslt) {
+    Meteor.call('savePost', infoData, function (err, rslt) {
       //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분
       if (err) {
         alert(err)
