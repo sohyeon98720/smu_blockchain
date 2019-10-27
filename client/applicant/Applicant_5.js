@@ -15,6 +15,14 @@ Template.Applicant_5.onRendered(function() {
   }, 1000)
 
 
+  var infoData={
+    phoneNumber:phoneNumber,
+    homeAdd:homeAdd,
+    email:email,
+    gender:gender,
+    birth:birth
+  }
+
   Meteor.call('saveInfo',infoData, function(err, rslt) {
     //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분
     if(err){
