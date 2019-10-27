@@ -10,3 +10,6 @@ Template.test.helpers({
     return DB_CONTENTS.findOne({_id: _id});
   }
 })
+
+
+// 기능1구현중
