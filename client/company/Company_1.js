@@ -1,7 +1,6 @@
 FlowRouter.route('/Company_1', {
   action: function() {
     BlazeLayout.render('Company_1');
-    console.log(Meteor.users.findOne());
   }
 })
 // Template.Company_1.onRendered(function() {
@@ -26,6 +25,9 @@ Template.Company_1.helpers({
     //return Meteor.users.find({comApply:true},{"p_Name":true});
 
     return Meteor.users.find({_id:Meteor.user()._id}).fetch();
+    //return Meteor.users.find().fetch({"com_Region":{$in:["f","F"]}});
+    //return Meteor.users.find({username:"user04"}).fetch();
+    //return Meteor.users.find({},{username:"true"}).fetch();
 
   }
 
