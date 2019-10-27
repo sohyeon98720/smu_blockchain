@@ -9,8 +9,6 @@ Template.Applicant_5.onRendered(function() {
     feather.replace()
 
   };
-  DB_RESUME.find({gender: '남성'})
-  console.log(birth);
 
 
 
