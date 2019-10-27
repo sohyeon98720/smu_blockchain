@@ -1,0 +1,199 @@
+<template name="Applicant_2">
+  {{> ex_navbar}}
+  <id id="Applicant_2">
+    <script language="javascript">
+      function pop(){
+          alert("정보입력이 완료되었습니다!")
+        }
+    </script>
+    <!-- navar 정보 -->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+       </nav>
+
+    <!-- 목록 -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+              <li class="nav-item">
+                <a class="nav-link " href="/Applicant_1">
+                  <span data-feather="file"></span>
+                  개인정보 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/Applicant_2">
+                  <span data-feather="file"></span>
+                  학력 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Applicant_3">
+                  <span data-feather="users"></span>
+                  경력 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Applicant_4">
+                  <span data-feather="file"></span>
+                  개인역량 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Applicant_5">
+                  <span data-feather="bar-chart-2"></span>
+                  내 원서함
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- 정보입력 -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+            <h1 class="h2">학력작성</h1>
+
+            <!-- 버튼 -->
+            <!-- <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div> -->
+
+          </div>
+
+
+          <fieldset>
+              <legend>대학,대학원정보 입력</legend>
+
+          대학:
+          <select name="university" value="대학" id=uni_Year>
+              <option value="대학교(2,3년)">대학교(2,3년)</option>
+              <option value="대학교(4년)">대학교(4년)</option>
+              <option value="대학원(석사)">대학원(석사)</option>
+              <option value="대학원(박사)">대학원(박사)</option>
+            </select>
+
+          <br>
+          <br>
+          학교명:
+          <input type="text" name="university_name" style="ime-mode:active" id=uni_Name>
+
+          <br>
+          <br>
+
+          지역:
+          <select name="region" value="지역" id=uni_Region>
+              <option value="서울">서울</option>
+              <option value="경기">경기</option>
+              <option value="광주">광주</option>
+              <option value="대구">대구</option>
+              <option value="대전">대전</option>
+              <option value="부산">부산</option>
+              <option value="울산">울산</option>
+              <option value="인천">인천</option>
+              <option value="강원">강원</option>
+              <option value="경남">경남</option>
+              <option value="경북">경북</option>
+              <option value="전남">전남</option>
+              <option value="전북">전북</option>
+              <option value="충북">충북</option>
+              <option value="충남">충남</option>
+              <option value="제주">제주</option>
+              <option value="기타">기타</option>
+            </select>
+
+          <br>
+          <br>
+          전공:
+          <select name="major" value="전공" id=uni_Major>
+              <option value="주전공">주전공</option>
+              <option value="복수전공">복수전공</option>
+              <option value="부전공">부전공</option>
+            </select>
+            계열:
+            <input type="text" name="major_belong" id=uni_MajorBelong>
+            학과:
+            <input type="text" name="department" id=uni_Department>
+
+
+          <br>
+          <br>
+          재학기간
+          <br>
+          날짜:
+          <input type="date" id=uni_BeginDate>
+          <select name="term" value="재학기간" id=uni_HowBegin>
+              <option value="입학">입학</option>
+              <option value="편입">편입</option>
+            </select>
+                날짜:
+                <input type="date" id=uni_EndDate>
+          <select name="상태" value="상태" id=uni_HowEnd>
+              <option value="졸업">졸업</option>
+              <option value="재학중">재학중</option>
+              <option value="휴학중">휴학중</option>
+              <option value="수료">수료</option>
+              <option value="중퇴">중퇴</option>
+              <option value="자퇴">자퇴</option>
+              <option value="졸업예정">졸업예정</option>
+            </select>
+            졸업증명번호:
+            <input type="text" name="uni_information" id=uni_GraduNumber>
+
+
+          <br>
+          <br>
+          주/야간:
+          <select name="주,야간" value="주,야간" id=uni_DaynNight>
+              <option value="주간">주간</option>
+              <option value="야간">야간</option>
+            </select>
+
+          <br>
+          <br>
+          학점:
+          <input type="text" name="grade" id=uni_Grade >
+          <select name="만점학점" id=uni_Total>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          </select>
+          성적발급번호:
+          <input type="text" name="grade_information" id=uni_GradeNumber>
+          <div class="filebox"> <label for="ex_file">파일첨부</label> <input type="file" id="uni_File"> </div>
+
+          <br>
+          <br>
+          논문&졸업작품:
+          <input type="text" name="Paper" id=uni_Journal>
+
+          </fieldset>
+          <br><br>
+          <button id="btn-submit" class="btn btn-primary btn-lg btn-block">내 원서함에 저장</button>
+
+          <br><br>
+
+          <!-- <h2>Section title</h2> -->
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+
+
+
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </id>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</template>

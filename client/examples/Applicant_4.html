@@ -1,0 +1,129 @@
+<template name="Applicant_4">
+  {{> ex_navbar}}
+  <id id="Applicant_4">
+    <script language="javascript">
+      function pop(){
+          alert("정보입력이 완료되었습니다!")
+        }
+    </script>
+    <!-- navar 정보 -->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+       </nav>
+
+    <!-- 목록 -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+              <li class="nav-item">
+                <a class="nav-link " href="/Applicant_1">
+                  <span data-feather="file"></span>
+                  개인정보 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/Applicant_2">
+                  <span data-feather="file"></span>
+                  학력 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Applicant_3">
+                  <span data-feather="users"></span>
+                  경력 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Applicant_4">
+                  <span data-feather="file"></span>
+                  개인역량 작성하기
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Applicant_5">
+                  <span data-feather="bar-chart-2"></span>
+                  내 원서함
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- 정보입력 -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+            <h1 class="h2">개인역량작성</h1>
+
+            <!-- 버튼 -->
+            <!-- <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div> -->
+
+          </div>
+
+
+          <fieldset>
+              <legend>자격증/어학/수상내역</legend>
+          <br>
+          항목선택:
+          <select name="항목선택" id=spec_What value="항목선택">
+              <option value="자격증/면허증">자격증/면허증</option>
+              <option value="어학시험">어학시험</option>
+              <option value="수상내역/공모전">수상내역/공모전</option>
+            </select>
+          <br>
+          <br>
+            자격증명:
+            <input type="text" name="자격증명" id=spec_Name>
+          <br>
+          <br>
+            발행처/기관:
+            <input type="text" name="발행처/기관" id=spec_Organization>
+            자격증 발급번호:
+            <input type="text" name="spec_information" id=spec_Number>
+            <div class="filebox"> <label for="ex_file">파일첨부: </label> <input type="file" id="ex_file"> </div>
+          <br>
+          <br>
+            취득일:
+            <input type="date" id=spec_GetDate>
+          </fieldset>
+          <br><br>
+          <fieldset>
+              <legend>기타</legend>
+              <br>
+                <img src="facebook.jpg" style="width:50px"><input type="text" name="id" id=spec_Facebook placeholder="facebook" style="width:200px"><br>
+                <img src="insta.jpg" style="width:50px"><input type="text" name="id" id=spec_Instagram placeholder="instagram" style="width:200px"><br>
+                <img src="navercafe.jpg" style="width:50px"><input type="text" name="id" id=spec_Cafe placeholder="네이버 카페" style="width:200px"><br>
+                <img src="naverblog.jpg" style="width:50px"><input type="text" name="id" id=spec_Blog placeholder="네이버 블로그" style="width:200px"><br>
+          </fieldset>
+          <br><br>
+          <input type="button" onclick="pop();location.href='/Applicant_4'" value="내 원서함에 저장"/>
+
+
+          <br><br>
+
+          <!-- <h2>Section title</h2> -->
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+
+
+
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </id>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</template>
