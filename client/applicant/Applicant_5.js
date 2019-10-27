@@ -17,6 +17,6 @@ Template.Applicant_5.onRendered(function() {
 
 Template.Applicant_5.helpers({
   userInfo: function() {
-    return Meteor.users.findOne({username: 'user01'});
+    return Meteor.users.findOne({_id:Meteor.user()._id});
   }
 })
