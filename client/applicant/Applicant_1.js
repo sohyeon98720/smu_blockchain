@@ -8,7 +8,6 @@ Template.Applicant_1.events({
   'click #btn-submit': function(evt) {
     evt.preventDefault();
 
-
     var phoneNumber = $('#phoneNumber').val();
     var homeAdd = $('#homeAdd').val();
     var email = $('#email').val();
@@ -39,7 +38,6 @@ Template.Applicant_1.events({
       birth:birth
     }
 
-
     Meteor.call('saveInfo',infoData, function(err, rslt) {
       //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분
       if(err){
@@ -47,7 +45,6 @@ Template.Applicant_1.events({
       }else{
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
-      console.log(email);
     });
   }
 })
