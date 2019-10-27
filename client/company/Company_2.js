@@ -4,7 +4,7 @@ FlowRouter.route('/Company_2', {
   }
 })
 
-Template.Company_1.onRendered(function() {
+Template.Company_2.onRendered(function() {
   run = function () {
     feather.replace()
   };
