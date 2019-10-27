@@ -35,30 +35,30 @@ Meteor.methods({
       }
     })
   },
-  setEdu: function (uni_GraduNumber) {
-    //지원자만 - 학력작성(졸업증명서 번호입력)
-    last.setEdu.sendTransaction(uni_GraduNumber, {
-      from: web3.eth.coinbase,
-    }, function (error, transactionHash) {
-      if (!error) {
-        console.log("Good3 + ", uni_GraduNumber);
-      } else {
-        console.log("Error3");
-      }
-    })
-  },
-  setCareer: function (com_Number) {
-    //지원자만 - 경력작성(경력증명서 번호입력)
-    last.setCareer.sendTransaction(com_Number, {
-      from: web3.eth.coinbase,
-    }, function (error, transactionHash) {
-      if (!error) {
-        console.log("Good4 + ", com_Number);
-      } else {
-        console.log("Error4");
-      }
-    })
-  },
+  // setEdu: function (uni_GraduNumber) {
+  //   //지원자만 - 학력작성(졸업증명서 번호입력)
+  //   last.setEdu.sendTransaction(uni_GraduNumber, {
+  //     from: web3.eth.coinbase,
+  //   }, function (error, transactionHash) {
+  //     if (!error) {
+  //       console.log("Good3 + ", uni_GraduNumber);
+  //     } else {
+  //       console.log("Error3");
+  //     }
+  //   })
+  // },
+  // setCareer: function (com_Number) {
+  //   //지원자만 - 경력작성(경력증명서 번호입력)
+  //   last.setCareer.sendTransaction(com_Number, {
+  //     from: web3.eth.coinbase,
+  //   }, function (error, transactionHash) {
+  //     if (!error) {
+  //       console.log("Good4 + ", com_Number);
+  //     } else {
+  //       console.log("Error4");
+  //     }
+  //   })
+  // },
   getInfo: function () {
     //인적사항 확인
     var a = last.getInfo.call().toString();
@@ -204,6 +204,15 @@ Meteor.methods({
     return "성공"
   },
   saveCareer: function (careerData, com_Number) {
+    last.setCareer.sendTransaction(com_Number, {
+      from: web3.eth.coinbase,
+    }, function (error, transactionHash) {
+      if (!error) {
+        console.log("Good4 + ", com_Number);
+      } else {
+        console.log("Error4");
+      }
+    })
     console.log(com_Number);
     DB_RESUME.insert({
       careerData,
