@@ -288,7 +288,6 @@ Meteor.methods({
     })
     return "원서함에 저장되었습니다"
   }
-
 })
 
 
