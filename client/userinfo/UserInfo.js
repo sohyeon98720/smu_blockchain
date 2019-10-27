@@ -14,12 +14,7 @@ Template.UserInfo.events({
   'click #btn-submit': function(evt) {
     evt.preventDefault();
     var firstName = $('#firstName').val();
-    // $('#firstName').val('merong');
-    // alert($('#state').val());
-    // alert($('#credit').is(":checked"))
     var credit = $('#credit').is(":checked")
-    // alert($('#debit').is(":checked"))
-    // alert($('#paypal').is(":checked"))
   //  1. DB에 바로 넣기
   //   var data = {
   //     createdAt: new Date(),
