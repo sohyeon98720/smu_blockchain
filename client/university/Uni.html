@@ -42,37 +42,65 @@
               </button>
             </div>
           </div>
-    <div class="container marketing">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-            <img src="/images/samples/cat01.png" alt="" class="rounded-circle" width="140" height="140">
-<!--          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
-          <h2>학생1</h2>
-          <p>학생의 인적사항 정보/ 이름, 학과, 학년, 학번, 학점 등</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+            <div class="row">
 
-        <div class="col-lg-4">
-          <img src="/images/samples/0001.jpeg" alt="" class="rounded-circle" width="140" height="140">
-          <h2>학생2</h2>
-          <p>학생의 인적사항 정보/ 이름, 학과, 학년, 학번, 학점 등</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">생년월일</th>
+                        <th scope="col">이메일주소</th>
+                        <th scope="col">학교명</th>
+                        <th scope="col">인증여부</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each students}}
+                        <tr>
+                            <td scope="row"><a href="/ex_post/{{this._id}}">{{profile.p_Name}}</a></td>
+                            <td>{{profile.birth}}</td>
+                            <td>{{profile.email}}</td>
+                            <td>{{profile.uni_Name}}</td>
+                            <td>{{profile.uni_Author}}</td>
+                            <td><button id="btn-remove" class="close" style="float: left;">
+                                <span aria-hidden="true">&times;</span>
+                            </button></td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="col-lg-4">
-          <img src="/images/samples/cat01.png" alt="" class="rounded-circle" width="140" height="140">
-<!--          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
-          <h2>학생3</h2>
-          <p>학생의 인적사항 정보/ 이름, 학과, 학년, 학번, 학점 등</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-        <br><br><br>
 
-      <!-- FOOTER -->
-    {{> ex_footer}}
-    </div><!-- /.container -->
+
+
+<!--    <div class="container marketing">-->
+<!--      &lt;!&ndash; Three columns of text below the carousel &ndash;&gt;-->
+<!--      <div class="row">-->
+<!--        <div class="col-lg-4">-->
+<!--          <img src="/images/samples/cat01.png" alt="" class="rounded-circle" width="140" height="140">-->
+<!--&lt;!&ndash;          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>&ndash;&gt;-->
+<!--          <h2>학생1</h2>-->
+<!--          <p>학생의 인적사항 정보/ 이름, 학과, 학년, 학번, 학점 등</p>-->
+<!--          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+<!--        </div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+<!--        <div class="col-lg-4">-->
+<!--          <img src="/images/samples/0001.jpeg" alt="" class="rounded-circle" width="140" height="140">-->
+<!--          <h2>학생2</h2>-->
+<!--          <p>학생의 인적사항 정보/ 이름, 학과, 학년, 학번, 학점 등</p>-->
+<!--          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+<!--        </div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+<!--        <div class="col-lg-4">-->
+<!--          <img src="/images/samples/cat01.png" alt="" class="rounded-circle" width="140" height="140">-->
+<!--&lt;!&ndash;          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>&ndash;&gt;-->
+<!--          <h2>학생3</h2>-->
+<!--          <p>학생의 인적사항 정보/ 이름, 학과, 학년, 학번, 학점 등</p>-->
+<!--          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+<!--        </div>&lt;!&ndash; /.col-lg-4 &ndash;&gt;-->
+<!--      </div>&lt;!&ndash; /.row &ndash;&gt;-->
+<!--      &lt;!&ndash; FOOTER &ndash;&gt;-->
+<!--    {{> ex_footer}}-->
+<!--    </div>&lt;!&ndash; /.container &ndash;&gt;-->
           <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
         </main>
       </div>

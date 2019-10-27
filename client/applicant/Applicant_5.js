@@ -22,6 +22,7 @@ Template.Applicant_5.helpers({
 })
 
 Template.Applicant_5.events({
+  //경력인증요청 버튼이 눌리면
   'click #btn-submit1': function(evt) {
     evt.preventDefault();
     var comApply=true;
@@ -33,6 +34,7 @@ Template.Applicant_5.events({
       }
     });
   },
+  //학력인증요청 버튼이 눌리면
   'click #btn-submit2': function(evt) {
     evt.preventDefault();
     var uniApply=true;
