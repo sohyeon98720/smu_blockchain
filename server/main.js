@@ -102,6 +102,7 @@ Meteor.methods({
   getEduRequest: function () {
     var d = last.getEduRequest.call().toString();
     console.log(d);
+    return d;
   },
   //기업만 - 요청받은 경력 확인
   getCareerRequest: function () {
