@@ -9,7 +9,7 @@ Template.UserInfo.helpers({
     return DB_RESUME.find({}, {sort: {createdAt: -1}, limit: 5})
   }
 })
-
+//dddd
 Template.UserInfo.events({
   'click #btn-submit': function(evt) {
     evt.preventDefault();
