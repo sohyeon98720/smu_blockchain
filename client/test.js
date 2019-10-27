@@ -10,3 +10,5 @@ Template.test.helpers({
     return DB_CONTENTS.findOne({_id: _id});
   }
 })
+
+// 아냐 진짜배기는 이거야.
