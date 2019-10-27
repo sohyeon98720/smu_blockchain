@@ -20,31 +20,37 @@ Template.Applicant_1.events({
     //var credit = $('#credit').is(":checked")
     // alert($('#debit').is(":checked"))
     // alert($('#paypal').is(":checked"))
-    //  1. DB에 바로 넣기
-    //   var data = {
-    //     createdAt: new Date(),
-    //     firstName: firstName,
-    //     credit: credit
-    //   };
-    //   DB_RESUME.insert(data);
-    //   alert('success');
-    //  2. 서버에 전달해서 작업하기
+  //  1. DB에 바로 넣기
+  //   var data = {
+  //     createdAt: new Date(),
+  //     firstName: firstName,
+  //     credit: credit
+  //   };
+  //   DB_RESUME.insert(data);
+  //   alert('success');
+  //  2. 서버에 전달해서 작업하기
 
-    var infoData = {
-      phoneNumber: phoneNumber,
-      homeAdd: homeAdd,
-      email: email,
-      gender: gender,
-      birth: birth
+    var infoData={
+      phoneNumber:phoneNumber,
+      homeAdd:homeAdd,
+      email:email,
+      gender:gender,
+      birth:birth
     }
 
-    Meteor.call('savePost', infoData, function (err, rslt) {
+    Meteor.call('saveInfo',infoData, function(err, rslt) {
       //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분
-      if (err) {
+      if(err){
         alert(err)
-      } else {
+      }else{
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
     });
   }
-});
+})
+
+Template.Applicant_1.helpers({
+  info:function() {
+    return DB_RESUME.find({});
+  }
+})
