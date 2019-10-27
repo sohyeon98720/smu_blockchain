@@ -208,6 +208,14 @@ Meteor.methods({
       com_Number:com_Number
     });
     return "성공"
+  },
+  saveSpec: function(specData,spec_Number){
+    console.log(spec_Number);
+    DB_RESUME.insert({
+      specData,
+      com_Number:spec_Number
+    });
+    return "성공"
   }
   //insert 안에 id를 주고 update 사용!
 
