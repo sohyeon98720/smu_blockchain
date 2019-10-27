@@ -273,19 +273,19 @@ Meteor.methods({
 
     var userInfo = Meteor.user();
 
-    Meteor.users.update({_id: userInfo._id}, {
-      $set: {
-        'profile.spec_What': specData.spec_What,
-        'profile.spec_Name': specData.spec_Name,
-        'profile.spec_Organization': specData.spec_Organization,
-        'profile.spec_GetDate': specData.spec_GetDate,
-        'profile.spec_Facebook': specData.spec_Facebook,
-        'profile.spec_Instagram': specData.spec_Instagram,
-        'profile.spec_Cafe': specData.spec_Cafe,
-        'profile.spec_Blog': specData.spec_Blog,
-        'profile.spec_Number': spec_Number
-      }
-    })
+    // Meteor.users.update({_id: userInfo._id}, {
+    //   $set: {
+    //     'profile.spec_What': specData.spec_What,
+    //     'profile.spec_Name': specData.spec_Name,
+    //     'profile.spec_Organization': specData.spec_Organization,
+    //     'profile.spec_GetDate': specData.spec_GetDate,
+    //     'profile.spec_Facebook': specData.spec_Facebook,
+    //     'profile.spec_Instagram': specData.spec_Instagram,
+    //     'profile.spec_Cafe': specData.spec_Cafe,
+    //     'profile.spec_Blog': specData.spec_Blog,
+    //     'profile.spec_Number': spec_Number
+    //   }
+    // })
     return "원서함에 저장되었습니다"
   }
 })
