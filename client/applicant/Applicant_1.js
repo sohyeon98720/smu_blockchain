@@ -47,5 +47,4 @@ Template.Applicant_1.events({
       }
     });
 
-  }
 })

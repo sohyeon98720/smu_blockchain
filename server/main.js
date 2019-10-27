@@ -236,6 +236,13 @@ Meteor.methods({
   }
   //insert 안에 id를 주고 update 사용!
 
+  savePost: function(InfoData) {
+    DB_RESUME.insert(InfoData);
+    return '성공했슴.'
+  },
+  mirror: function(InfoData) {
+    return InfoData;
+  }
 })
 
 
