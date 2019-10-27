@@ -74,7 +74,20 @@
           </div>
 
             <br><br>
-            내 원서함 페이지입니다.
+            <tbody>
+            {{#each boards}}
+                <tr>
+                    <td scope="row">{{type}}</td>
+                    <td><a href="/ex_post/{{this._id}}">{{title}}</a></td>
+                    <td>{{name}}</td>
+                    <td>{{YMD}}<br>{{HMS}}</td>
+                    <td>{{readCount}}</td>
+                    <td><button id="btn-remove" class="close" style="float: left;">
+                        <span aria-hidden="true">&times;</span>
+                    </button></td>
+                </tr>
+            {{/each}}
+            </tbody>
           <br><br>
 
           <h2>Section title</h2>
