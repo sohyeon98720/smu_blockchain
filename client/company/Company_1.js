@@ -1,6 +1,7 @@
 FlowRouter.route('/Company_1', {
   action: function() {
     BlazeLayout.render('Company_1');
+    console.log(Meteor.users.findOne());
   }
 })
 // Template.Company_1.onRendered(function() {
@@ -17,8 +18,15 @@ FlowRouter.route('/Company_1', {
 // });
 
 
-// Template.Company_1.helpers({
-//   data:function(){
-//     return Meteor.users.find({profile.},);
-//   }
-// })
+Template.Company_1.helpers({
+  // data:function(){
+  //   return Meteor.users.find({comApply:true}).fetch();
+  // },
+  data1:function(){
+    //return Meteor.users.find({comApply:true},{"p_Name":true});
+
+    return Meteor.users.find({_id:Meteor.user()._id}).fetch();
+
+  }
+
+})
