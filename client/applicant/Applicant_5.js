@@ -9,11 +9,14 @@ Template.Applicant_5.onRendered(function() {
     feather.replace()
 
   };
-
-
-
   Meteor.setTimeout(function(){
     run()
   }, 1000)
 
 });
+
+Template.Applicant_5.helpers({
+  userInfo: function() {
+    var _id=
+  }
+})
