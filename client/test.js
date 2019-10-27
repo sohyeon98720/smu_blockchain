@@ -10,3 +10,10 @@ Template.test.helpers({
     return DB_CONTENTS.findOne({_id: _id});
   }
 })
+
+
+//김소현이 작업을 합니다.
+//다섯줄씩
+//또 다섯줄
+//다섯줄
+//5
