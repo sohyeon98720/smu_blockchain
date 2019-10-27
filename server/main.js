@@ -186,7 +186,12 @@ Meteor.methods({
 
   //DB 저장
   saveInfo: function(infoData){
-    DB_RESUME.insert(infoData);
+    // DB_RESUME.insert(infoData);
+    var userInfo = Meteor.user();
+
+    Meteor.update({_id: Meteor.user()._id}, {
+      $set: infoData
+    })
     return "원서함에 저장되었습니다"
   },
 
