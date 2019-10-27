@@ -8,6 +8,7 @@ Template.Applicant_1.events({
   'click #btn-submit': function(evt) {
     evt.preventDefault();
 
+
     var phoneNumber = $('#phoneNumber').val();
     var homeAdd = $('#homeAdd').val();
     var email = $('#email').val();
