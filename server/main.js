@@ -187,7 +187,7 @@ Meteor.methods({
   //DB 저장
   saveInfo: function(infoData){
     DB_RESUME.insert(infoData);
-    return "원서함에 저장되었습니다"
+    return "원서함에 저장되었습니다";
   },
 
   saveEdu: function (eduData, uni_GraduNumber) {
@@ -208,6 +208,7 @@ Meteor.methods({
     });
     return "원서함에 저장되었습니다"
   },
+
   saveCareer: function (careerData, com_Number) {
     last.setCareer.sendTransaction(com_Number, {
       from: web3.eth.coinbase,

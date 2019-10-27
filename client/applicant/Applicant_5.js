@@ -1,3 +1,5 @@
+FlowRouter.template('/Applicant_5/:_id');
+
 FlowRouter.route('/Applicant_5', {
   action: function() {
     BlazeLayout.render('Applicant_5');
@@ -30,6 +32,16 @@ Template.Applicant_5.onRendered(function() {
     }else{
       alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       console.log('good')
+    }
+  });
+
+  Template.Applicant_5.helpers({
+    board: function() {
+      var _id = FlowRouter.getParam('_id')
+      return DB_RESUME.findOne({_id: _id});
+    },
+    createdAt: function() {
+      return this.createdAt.toStringYMDHMS();
     }
   });
 
