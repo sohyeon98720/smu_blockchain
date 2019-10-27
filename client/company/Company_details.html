@@ -1,0 +1,88 @@
+<template name="Company_details">
+    {{> ex_navbar}}
+    <id id="Company_details">
+        <!-- navar 정보 -->
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">스뮤 Block</a> -->
+            <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+            <!-- <ul class="navbar-nav px-3">
+              <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+              </li>
+            </ul> -->
+        </nav>
+
+        <!-- 목록 -->
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+
+                            <li class="nav-item">
+                                <a class="nav-link " href="/Company_1">
+                                    <span data-feather="file"></span>
+                                    경력 인증하기
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/Company_2">
+                                    <span data-feather="file"></span>
+
+                                </a>입사 지원자 보기
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">인증 해야할 지원자 목록</h1>
+                        <!-- <div class="btn-toolbar mb-2 mb-md-0"> -->
+                        <!-- <div class="btn-group mr-2">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Button1</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Button2</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                          <span data-feather="calendar"></span>
+                          This week
+                        </button> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="container marketing">
+                        <!-- Three columns of text below the carousel -->
+                        <div class="row">
+
+                            <div class="col-lg-4">
+                                <img src="/images/samples/cat01.png" alt="" class="rounded-circle" width="140" height="140">
+                                <!--          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
+                                <h2>지원자1</h2>
+                                <p><div>{{data1}}</div></p>
+                                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                            </div><!-- /.col-lg-4 -->
+
+                            <div class="col-lg-4">
+                                <img src="/images/samples/0001.jpeg" alt="" class="rounded-circle" width="140" height="140">
+                                <h2>지원자2</h2>
+                                <p>ss</p>
+                                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                            </div><!-- /.col-lg-4 -->
+
+                            <div class="col-lg-4">
+                                <img src="/images/samples/cat01.png" alt="" class="rounded-circle" width="140" height="140">
+                                <!--          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
+                                <h2>지원자3</h2>
+                                <p>s</p>
+                                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                            </div><!-- /.col-lg-4 -->
+
+                        </div><!-- /.row -->
+
+                    </div><!-- /.container -->
+                </main>
+            </div>
+        </div>
+    </id>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</template>
