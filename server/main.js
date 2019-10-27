@@ -189,8 +189,7 @@ Meteor.methods({
     DB_RESUME.insert(infoData);
     return "원서함에 저장되었습니다"
   },
-  saveEdu: function(eduData,uni_GraduNumber){
-    DB_RESUME.update({
+
   saveEdu: function (eduData, uni_GraduNumber) {
     //블록체인
     last.setEdu.sendTransaction(uni_GraduNumber, {
@@ -203,7 +202,7 @@ Meteor.methods({
       }
     })
     //DB
-    DB_RESUME.insert({
+    DB_RESUME.update({
       eduData,
       uni_GraduNumber:uni_GraduNumber
     });
@@ -236,27 +235,6 @@ Meteor.methods({
   }
   //insert 안에 id를 주고 update 사용!
 
-
-
-  // saveResume: function(firstName, credit) {
-  //   console.log(firstName, credit);
-  //   // var hash = web3.ijefiwjf.fweijfiewjf
-  //   // web3.eth.coinbase.then(function(err, coinbase, param2, param3) {
-  //   //   console.log param1.
-  //   //
-  //   //   if(!!err) alert{}
-  //   //   else
-  //   //     DB_RESUME.insert({
-  //   //       firstName: firstName,
-  //   //       credit: credit,
-  //   //       createdAt: new Date()
-  //   //       hash: coinbase
-  //   //     })
-  //   // })
-  // },
-  // removeResume: function() {
-  //   // web3.iwejfiewj
-  // }
 })
 
 
