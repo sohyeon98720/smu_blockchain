@@ -3,14 +3,22 @@ FlowRouter.route('/Company_1', {
     BlazeLayout.render('Company_1');
   }
 })
-
 Template.Company_1.onRendered(function() {
   run = function () {
-    feather.replace()
-
-  };
-
-  Meteor.setTimeout(function(){
-    run()
-  }, 1000)
+    Meteor.call('getEduRequest',function(err,result){
+      if(err){
+        alert(err);
+      }
+      else{
+        Session.set('uni_data',result);
+      }
+    })
+  }
 });
+
+
+Template.Company_1.helpers({
+  data1:function(){
+    return Session.get('uni_data').a;
+  }
+})

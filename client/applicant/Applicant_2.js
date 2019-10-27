@@ -4,6 +4,20 @@ FlowRouter.route('/Applicant_2', {
   }
 })
 
+Template.Applicant_2.onRendered(function() {
+  run = function () {
+    var uni_GraduNumber=2;
+    Meteor.call('setEdu',uni_GraduNumber,function(err,result){
+      if(err){
+        alert(err);
+      }
+      else {
+        alert(result);
+      }
+    })
+  }
+})
+
 Template.Applicant_2.events({
   'click #btn-submit': function(evt) {
     evt.preventDefault();
@@ -45,6 +59,14 @@ Template.Applicant_2.events({
       uni_Journal:uni_Journal
     }
     console.log(eduData);
+    // Meteor.call('setEdu',uni_GraduNumber,function(err,result){
+    //   if(err){
+    //     alert(err);
+    //   }
+    //   else {
+    //     alert(result);
+    //   }
+    // })
 
     Meteor.call('saveEdu',eduData,uni_GraduNumber,function(err, rslt) {
       //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분

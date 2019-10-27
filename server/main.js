@@ -37,33 +37,31 @@ Meteor.methods({
       }
     })
   },
-  setEdu: function(uni_GraduNumber){
-    //지원자만 - 학력작성(졸업증명서 번호입력)
-    last.setEdu.sendTransaction(uni_GraduNumber,{
-      from:web3.eth.coinbase,
-    },function(error,transactionHash){
-      if(!error){
-        console.log("Good3 + ",uni_GraduNumber);
-      }
-      else{
-        console.log("Error3");
-      }
-    })
-  },
-  setCareer:function(com_Number){
-    //지원자만 - 경력작성(경력증명서 번호입력)
-    last.setCareer.sendTransaction(com_Number,{
-      from:web3.eth.coinbase,
-    },function(error,transactionHash){
-      if(!error){
-        console.log("Good4 + ",com_Number);
-      }
-      else{
-        console.log("Error4");
-      }
-    })
-  },
-  getInfo:function(){
+  // setEdu: function (uni_GraduNumber) {
+  //   //지원자만 - 학력작성(졸업증명서 번호입력)
+  //   last.setEdu.sendTransaction(uni_GraduNumber, {
+  //     from: web3.eth.coinbase,
+  //   }, function (error, transactionHash) {
+  //     if (!error) {
+  //       console.log("Good3 + ", uni_GraduNumber);
+  //     } else {
+  //       console.log("Error3");
+  //     }
+  //   })
+  // },
+  // setCareer: function (com_Number) {
+  //   //지원자만 - 경력작성(경력증명서 번호입력)
+  //   last.setCareer.sendTransaction(com_Number, {
+  //     from: web3.eth.coinbase,
+  //   }, function (error, transactionHash) {
+  //     if (!error) {
+  //       console.log("Good4 + ", com_Number);
+  //     } else {
+  //       console.log("Error4");
+  //     }
+  //   })
+  // },
+  getInfo: function () {
     //인적사항 확인
     var a=last.getInfo.call().toString();
     console.log(a);
@@ -108,6 +106,7 @@ Meteor.methods({
   getEduRequest:function(){
     var d=last.getEduRequest.call().toString();
     console.log(d);
+    return d;
   },
   //기업만 - 요청받은 경력 확인
   getCareerRequest:function(){
@@ -192,12 +191,34 @@ Meteor.methods({
   },
   saveEdu: function(eduData,uni_GraduNumber){
     DB_RESUME.update({
+  saveEdu: function (eduData, uni_GraduNumber) {
+    //블록체인
+    last.setEdu.sendTransaction(uni_GraduNumber, {
+      from: web3.eth.coinbase,
+    }, function (error, transactionHash) {
+      if (!error) {
+        console.log("Good3 + ", uni_GraduNumber);
+      } else {
+        console.log("Error3");
+      }
+    })
+    //DB
+    DB_RESUME.insert({
       eduData,
       uni_GraduNumber:uni_GraduNumber
     });
     return "원서함에 저장되었습니다"
   },
-  saveCareer: function(careerData,com_Number){
+  saveCareer: function (careerData, com_Number) {
+    last.setCareer.sendTransaction(com_Number, {
+      from: web3.eth.coinbase,
+    }, function (error, transactionHash) {
+      if (!error) {
+        console.log("Good4 + ", com_Number);
+      } else {
+        console.log("Error4");
+      }
+    })
     console.log(com_Number);
     DB_RESUME.update({
       careerData,
