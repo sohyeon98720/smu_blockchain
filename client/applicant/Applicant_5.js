@@ -20,7 +20,7 @@ Template.Applicant_5.onRendered(function() {
     if(err) {
       alert(err);
     } else {
-      alert(rslt); //결과를 가지고 클라이언트에서 수행해야 하는 것이 있으면 여기서 하면 됨.
+      find(infoData); //결과를 가지고 클라이언트에서 수행해야 하는 것이 있으면 여기서 하면 됨.
     }
   });
 
