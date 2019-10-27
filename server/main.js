@@ -8,7 +8,7 @@ var lastcareerContract = web3.eth.contract([{"constant":true,"inputs":[],"name":
 
 var last=lastcareerContract.at("0x4194D3eB92305B3C0f7C8c1b03397DcD119F9d69");
 
-console.log(web3.eth.mining);
+// console.log(web3.eth.mining);
 
 Meteor.methods({
   setNum: function(p_Type) {
