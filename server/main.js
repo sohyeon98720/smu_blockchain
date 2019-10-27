@@ -188,9 +188,16 @@ Meteor.methods({
   saveInfo: function(infoData){
     // DB_RESUME.insert(infoData);
     var userInfo = Meteor.user();
+    //console.log(userInfo)
 
-    Meteor.update({_id: Meteor.user()._id}, {
-      $set: infoData
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.phoneNumber': infoData.phoneNumber,
+        'profile.homeAdd': infoData.homeAdd,
+        'profile.email': infoData.email,
+        'profile.gender': infoData.gender,
+        'profile.birth': infoData.birth
+      }
     })
     return "원서함에 저장되었습니다"
   },
@@ -207,10 +214,16 @@ Meteor.methods({
       }
     })
     //DB
-    DB_RESUME.update({
-      eduData,
-      uni_GraduNumber:uni_GraduNumber
-    });
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.phoneNumber': eduData.phoneNumber,
+        'profile.homeAdd': eduData.homeAdd,
+        'profile.email': eduData.email,
+        'profile.gender': eduData.gender,
+        'profile.birth': eduData.birth
+      }
+    })
     return "원서함에 저장되었습니다"
   },
   saveCareer: function (careerData, com_Number) {
