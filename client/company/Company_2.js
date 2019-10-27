@@ -1,6 +1,6 @@
-FlowRouter.route('/Company_1', {
+FlowRouter.route('/Company_2', {
   action: function() {
-    BlazeLayout.render('Company_1');
+    BlazeLayout.render('Company_2');
   }
 })
 
