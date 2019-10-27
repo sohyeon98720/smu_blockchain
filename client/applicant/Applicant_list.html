@@ -74,19 +74,20 @@
                     </div>
 
                     <br><br>
-                    내 원서함 페이지입니다.
+                    내 원서함 목록보기 페이지입니다.
                     <br><br>
-                    {{#with userInfo}}
-                        <section class="jumbotron mt-4">
-                            <h1 class="text-center">{{profile.name}}</h1>
-                            <div>소속: {{profile.p_Type}}</div>
-                            <div>이름: {{profile.p_Name}}</div>
-                            <div>주민번호: {{profile.p_Number}}</div>
-                            <div>기관명: {{profile.c_Name}}</div>
-                            <div>사업자번호: {{profile.c_Number}}</div>
-                            <div class="mt-2 text-center">{{{content}}}</div>
-                        </section>
-                    {{/with}}
+                    {{#each boards}}
+                        <tr>
+                            <td scope="row">{{type}}</td>
+                            <td><a href="/ex_post/{{this._id}}">{{title}}</a></td>
+                            <td>{{name}}</td>
+                            <td>{{YMD}}<br>{{HMS}}</td>
+                            <td>{{readCount}}</td>
+                            <td><button id="btn-remove" class="close" style="float: left;">
+                                <span aria-hidden="true">&times;</span>
+                            </button></td>
+                        </tr>
+                    {{/each}}
 
                     <h2>Section title</h2>
                     <div class="table-responsive">
