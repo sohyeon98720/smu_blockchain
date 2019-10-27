@@ -1,4 +1,4 @@
-FlowRouter.route('/Applicant_5', {
+FlowRouter.route('/Applicant_5/:_id', {
   action: function() {
     BlazeLayout.render('Applicant_5');
   }
