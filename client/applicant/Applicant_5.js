@@ -17,7 +17,7 @@ Template.Applicant_5.onRendered(function() {
 
   Template.Applicant_5.helpers({
     boards: function() {
-      return DB_RESUME.find({}, {sort: {createdAt: -1}});
+      return Meteor.users.find({}, {sort: {createdAt: -1}});
     },
     YMD: function() {
       return this.createdAt.toStringYMD();
