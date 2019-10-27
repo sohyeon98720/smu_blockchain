@@ -19,6 +19,6 @@ Template.Company_1.onRendered(function() {
 
 Template.Company_1.helpers({
   data1:function(){
-    return Session.get('uni_data').a;
+    return Session.get('uni_data');
   }
 })
