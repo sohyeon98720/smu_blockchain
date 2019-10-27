@@ -27,6 +27,21 @@ Template.Applicant_5.onRendered(function() {
     }
   });
 
+  var phoneNumber = $('#phoneNumber').val();
+  var homeAdd = $('#homeAdd').val();
+  var email = $('#email').val();
+  var gender = $('#gender').val();
+  var birth = $('#birth').val();
+
+
+  var infoData = {
+    phoneNumber: phoneNumber,
+    homeAdd: homeAdd,
+    email: email,
+    gender: gender,
+    birth: birth
+  }
+
   Meteor.call('savePost', infoData, function(err, infoData) {
     //서버에서 처리 할거 다하고 응답을 주면 그 리턴을 받아서 클라이언트가 실행하는 부분
     if(err) {
