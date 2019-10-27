@@ -52,8 +52,3 @@ Template.Applicant_1.events({
   }
 })
 
-Template.Applicant_1.helpers({
-  info:function() {
-    return DB_RESUME.find({});
-  }
-})
