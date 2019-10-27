@@ -79,10 +79,12 @@
                     {{#each boards}}
                         <tr>
                             <td scope="row">{{type}}</td>
-                            <td><a href="/ex_post/{{this._id}}">{{title}}</a></td>
-                            <td>{{name}}</td>
-                            <td>{{YMD}}<br>{{HMS}}</td>
-                            <td>{{readCount}}</td>
+                            <td><a href="/Applicant_5/{{this._id}}">{{profile.name}}</a></td>
+                            <td>{{profile.p_Type}}</td>
+                            <td>{{profile.p_Name}}</td>
+                            <td>{{profile.p_Number}}</td>
+                            <td>{{profile.c_Name}}</td>
+                            <td>{{profile.c_Number}}</td>
                             <td><button id="btn-remove" class="close" style="float: left;">
                                 <span aria-hidden="true">&times;</span>
                             </button></td>
