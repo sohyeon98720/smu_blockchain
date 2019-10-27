@@ -292,6 +292,26 @@ Meteor.methods({
       }
     })
     return "원서함에 저장되었습니다"
+  },
+  saveComApply: function(comApply){
+
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.comApply': comApply
+      }
+    })
+    return "경력 인증 요청이 되었습니다"
+  },
+  saveUniApply: function(uniApply){
+
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.uniApply': uniApply
+      }
+    })
+    return "학력 인증 요청이 되었습니다"
   }
 
 })
