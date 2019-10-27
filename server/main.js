@@ -233,7 +233,7 @@ Meteor.methods({
       com_Number:spec_Number
     });
     return "원서함에 저장되었습니다"
-  }
+  },
   //insert 안에 id를 주고 update 사용!
 
   savePost: function(InfoData) {
