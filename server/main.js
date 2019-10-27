@@ -203,53 +203,43 @@ Meteor.methods({
   },
 
   saveEdu: function (eduData, uni_GraduNumber) {
-    //블록체인
-    last.setEdu.sendTransaction(uni_GraduNumber, {
-      from: web3.eth.coinbase,
-    }, function (error, transactionHash) {
-      if (!error) {
-        console.log("Good3 + ", uni_GraduNumber);
-      } else {
-        console.log("Error3");
-      }
-    })
-    //DB
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
         'profile.uni_Year': eduData.uni_Year,
-        'profile.uni_Name': eduData.uni_Name,
-        'profile.uni_Region': eduData.uni_Region,
-        'profile.uni_Major': eduData.uni_Major,
-        'profile.uni_MajorBelong': eduData.uni_MajorBelong,
-        'profile.uni_Department': eduData.uni_Department,
-        'profile.uni_BeginDate': eduData.uni_BeginDate,
-        'profile.uni_HowBegin': eduData.uni_HowBegin,
-        'profile.uni_EndDate': eduData.uni_EndDate,
-        'profile.uni_HowEnd': eduData.uni_HowEnd,
-        'profile.uni_DaynNight': eduData.uni_DaynNight,
-        'profile.uni_Grade': eduData.uni_Grade,
-        'profile.uni_Total': eduData.uni_Total,
-        'profile.uni_GradeNumber': eduData.uni_GradeNumber,
-        'profile.uni_File': eduData.uni_File,
-        'profile.uni_Journal': eduData.uni_Journal,
-        'profile.uni_GraduNumber':uni_GraduNumber
+          'profile.uni_Name': eduData.uni_Name,
+          'profile.uni_Region': eduData.uni_Region,
+          'profile.uni_Major': eduData.uni_Major,
+          'profile.uni_MajorBelong': eduData.uni_MajorBelong,
+          'profile.uni_Department': eduData.uni_Department,
+          'profile.uni_BeginDate': eduData.uni_BeginDate,
+          'profile.uni_HowBegin': eduData.uni_HowBegin,
+          'profile.uni_EndDate': eduData.uni_EndDate,
+          'profile.uni_HowEnd': eduData.uni_HowEnd,
+          'profile.uni_DaynNight': eduData.uni_DaynNight,
+          'profile.uni_Grade': eduData.uni_Grade,
+          'profile.uni_Total': eduData.uni_Total,
+          'profile.uni_GradeNumber': eduData.uni_GradeNumber,
+          'profile.uni_File': eduData.uni_File,
+          'profile.uni_Journal': eduData.uni_Journal,
+          'profile.uni_GraduNumber':uni_GraduNumber
       }
     })
+    //블록체인
+    // last.setEdu.sendTransaction(uni_GraduNumber, {
+    //   from: web3.eth.coinbase,
+    // }, function (error, transactionHash) {
+    //   if (!error) {
+    //     console.log("Good3 + ", uni_GraduNumber);
+    //   } else {
+    //     console.log("Error3");
+    //   }
+    // })
+    //DB
+
     return "원서함에 저장되었습니다"
   },
   saveCareer: function (careerData, com_Number) {
-    last.setCareer.sendTransaction(com_Number, {
-      from: web3.eth.coinbase,
-    }, function (error, transactionHash) {
-      if (!error) {
-        console.log("Good4 + ", com_Number);
-      } else {
-        console.log("Error4");
-      }
-    })
-    console.log(com_Number);
-
     var userInfo = Meteor.user();
 
     Meteor.users.update({_id: userInfo._id}, {
@@ -266,6 +256,18 @@ Meteor.methods({
         'profile.com_Number': com_Number
       }
     })
+    // last.setCareer.sendTransaction(com_Number, {
+    //   from: web3.eth.coinbase,
+    // }, function (error, transactionHash) {
+    //   if (!error) {
+    //     console.log("Good4 + ", com_Number);
+    //   } else {
+    //     console.log("Error4");
+    //   }
+    // })
+    // console.log(com_Number);
+
+
     return "원서함에 저장되었습니다"
   },
   saveSpec: function(specData,spec_Number){
@@ -275,18 +277,19 @@ Meteor.methods({
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
         'profile.spec_What': specData.spec_What,
-        'profile.spec_Name': specData.spec_Name,
-        'profile.spec_Organization': specData.spec_Organization,
-        'profile.spec_GetDate': specData.spec_GetDate,
-        'profile.spec_Facebook': specData.spec_Facebook,
-        'profile.spec_Instagram': specData.spec_Instagram,
-        'profile.spec_Cafe': specData.spec_Cafe,
-        'profile.spec_Blog': specData.spec_Blog,
-        'profile.spec_Number': spec_Number
+          'profile.spec_Name': specData.spec_Name,
+          'profile.spec_Organization': specData.spec_Organization,
+          'profile.spec_GetDate': specData.spec_GetDate,
+          'profile.spec_Facebook': specData.spec_Facebook,
+          'profile.spec_Instagram': specData.spec_Instagram,
+          'profile.spec_Cafe': specData.spec_Cafe,
+          'profile.spec_Blog': specData.spec_Blog,
+          'profile.spec_Number': spec_Number
       }
     })
     return "원서함에 저장되었습니다"
   }
+
 })
 
 
