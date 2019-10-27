@@ -76,7 +76,7 @@
                     <br><br>
                     내 원서함 목록보기 페이지입니다.
                     <br><br>
-                    {{#each boards}}
+                    {{#each userInfoList}}
                         <tr>
                             <td scope="row">{{type}}</td>
                             <td><a href="/Applicant_5/{{this._id}}">{{profile.name}}</a></td>
@@ -91,14 +91,7 @@
                         </tr>
                     {{/each}}
 
-                    <h2>Section title</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
 
-
-
-                        </table>
-                    </div>
                 </main>
             </div>
         </div>
