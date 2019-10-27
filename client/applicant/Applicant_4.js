@@ -40,11 +40,3 @@ Template.Applicant_4.events({
     });
   }
 })
-
-
-
-// //1.db에 비로 넣기
-// DB_RESUME.insert({
-//   firstNmae: fistName.
-//   credit: credit;
-// });
