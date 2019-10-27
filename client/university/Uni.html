@@ -42,6 +42,38 @@
               </button>
             </div>
           </div>
+            <div class="row">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">생년월일</th>
+                        <th scope="col">이메일주소</th>
+                        <th scope="col">학교명</th>
+                        <th scope="col">인증여부</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each students}}
+                        <tr>
+                            <td scope="row">{{type}}</td>
+                            <td><a href="/ex_post/{{this._id}}">{{title}}</a></td>
+                            <td>{{name}}</td>
+                            <td>{{YMD}}<br>{{HMS}}</td>
+                            <td>{{readCount}}</td>
+                            <td><button id="btn-remove" class="close" style="float: left;">
+                                <span aria-hidden="true">&times;</span>
+                            </button></td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
     <div class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">

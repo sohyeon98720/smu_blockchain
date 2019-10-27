@@ -12,3 +12,9 @@ Template.Uni.onRendered(function() {
     run()
   }, 1000)
 });
+
+Template.Uni.helpers({
+  students: function() {
+    return Meteor.users.find({_id:Meteor.user()._id}).fetch();
+  }
+})
