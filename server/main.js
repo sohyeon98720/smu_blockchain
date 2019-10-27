@@ -217,11 +217,23 @@ Meteor.methods({
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
-        'profile.phoneNumber': eduData.phoneNumber,
-        'profile.homeAdd': eduData.homeAdd,
-        'profile.email': eduData.email,
-        'profile.gender': eduData.gender,
-        'profile.birth': eduData.birth
+        'profile.uni_Year': eduData.uni_Year,
+        'profile.uni_Name': eduData.uni_Name,
+        'profile.uni_Region': eduData.uni_Region,
+        'profile.uni_Major': eduData.uni_Major,
+        'profile.uni_MajorBelong': eduData.uni_MajorBelong,
+        'profile.uni_Department': eduData.uni_Department,
+        'profile.uni_BeginDate': eduData.uni_BeginDate,
+        'profile.uni_HowBegin': eduData.uni_HowBegin,
+        'profile.uni_EndDate': eduData.uni_EndDate,
+        'profile.uni_HowEnd': eduData.uni_HowEnd,
+        'profile.uni_DaynNight': eduData.uni_DaynNight,
+        'profile.uni_Grade': eduData.uni_Grade,
+        'profile.uni_Total': eduData.uni_Total,
+        'profile.uni_GradeNumber': eduData.uni_GradeNumber,
+        'profile.uni_File': eduData.uni_File,
+        'profile.uni_Journal': eduData.uni_Journal,
+        'profile.uni_GraduNumber':uni_GraduNumber
       }
     })
     return "원서함에 저장되었습니다"
@@ -237,21 +249,45 @@ Meteor.methods({
       }
     })
     console.log(com_Number);
-    DB_RESUME.update({
-      careerData,
-      com_Number:com_Number
-    });
+
+    var userInfo = Meteor.user();
+
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.com_Name': careerData.com_Name,
+        'profile.com_BeginDate': careerData.com_BeginDate,
+        'profile.com_EndDate': careerData.com_EndDate,
+        'profile.com_HowEnd': careerData.com_HowEnd,
+        'profile.com_File': careerData.com_File,
+        'profile.com_EndReason': careerData.com_EndReason,
+        'profile.com_Position': careerData.com_Position,
+        'profile.com_Field': careerData.com_Field,
+        'profile.com_Region': careerData.com_Region,
+        'profile.com_Number': com_Number
+      }
+    })
     return "원서함에 저장되었습니다"
   },
   saveSpec: function(specData,spec_Number){
     console.log(spec_Number);
-    DB_RESUME.update({
-      specData,
-      com_Number:spec_Number
-    });
+
+    var userInfo = Meteor.user();
+
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.spec_What': specData.spec_What,
+        'profile.spec_Name': specData.spec_Name,
+        'profile.spec_Organization': specData.spec_Organization,
+        'profile.spec_GetDate': specData.spec_GetDate,
+        'profile.spec_Facebook': specData.spec_Facebook,
+        'profile.spec_Instagram': specData.spec_Instagram,
+        'profile.spec_Cafe': specData.spec_Cafe,
+        'profile.spec_Blog': specData.spec_Blog,
+        'profile.com_Number': spec_Number
+      }
+    })
     return "원서함에 저장되었습니다"
   }
-  //insert 안에 id를 주고 update 사용!
 
 })
 
