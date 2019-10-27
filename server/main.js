@@ -184,14 +184,10 @@ Meteor.methods({
     console.log(k);
   },
 
-  saveInfo: function(gender,birth,phoneNumber, homeAdd, email){
-    DB_RESUME.insert({
-      gender:gender,
-      birth:birth,
-      phoneNumber:phoneNumber,
-      homeAdd:homeAdd,
-      email:email
-    });
+
+  //DB 저장
+  saveInfo: function(infoData){
+    DB_RESUME.insert(infoData);
     return "원서함에 저장되었습니다"
   },
   saveEdu: function(eduData,uni_GraduNumber){

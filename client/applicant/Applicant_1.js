@@ -29,7 +29,16 @@ Template.Applicant_1.events({
   //   DB_RESUME.insert(data);
   //   alert('success');
   //  2. 서버에 전달해서 작업하기
-    Meteor.call('saveInfo',gender,birth,phoneNumber, homeAdd, email, function(err, rslt) {
+
+    var infoData={
+      phoneNumber:phoneNumber,
+      homeAdd:homeAdd,
+      email:email,
+      gender:gender,
+      birth:birth
+    }
+
+    Meteor.call('saveInfo',infoData, function(err, rslt) {
       //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분
       if(err){
         alert(err)
