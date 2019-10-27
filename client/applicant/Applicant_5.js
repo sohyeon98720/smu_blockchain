@@ -1,4 +1,4 @@
-FlowRouter.route('/Applicant_5', {
+FlowRouter.route('/Applicant_5/:_id', {
   action: function() {
     BlazeLayout.render('Applicant_5');
   }
@@ -9,9 +9,15 @@ Template.Applicant_5.onRendered(function() {
     feather.replace()
 
   };
-
-
   Meteor.setTimeout(function(){
     run()
   }, 1000)
+
 });
+
+Template.Applicant_5.helpers({
+  userInfo: function() {
+    var _id=FlowRouter.getParam('_id')
+    return users.findOne({_id: _id});
+  }
+})
