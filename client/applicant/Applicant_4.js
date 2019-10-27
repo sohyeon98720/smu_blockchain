@@ -4,67 +4,39 @@ FlowRouter.route('/Applicant_4', {
   }
 })
 
-Template.Applicant_4.onRendered(function() {
-  run = function () {
-    feather.replace()
+Template.Applicant_4.events({
+  'click #btn-submit': function(evt) {
+    evt.preventDefault();
+    //  alert(11)
+    var spec_What= $('#spec_What').val();
+    var spec_Name= $('#spec_Name').val();
+    var spec_Organization= $('#spec_Organization').val();
+    var spec_Number= $('#spec_Number').val();
+    var spec_GetDate = $('#spec_GetDate').val();
+    var spec_Facebook = $('#spec_Facebook').val();
+    var spec_Instagram= $('#spec_Instagram').val();
+    var spec_Cafe= $('#spec_Cafe').val();
+    var spec_Blog= $('#spec_Blog').val();
 
-    // Graphs
-    var ctx = document.getElementById('myChart')
-    // eslint-disable-next-line no-unused-vars
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: [
-          'Sunday',
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday'
-        ],
-        datasets: [{
-          data: [
-            15339,
-            21345,
-            18483,
-            24003,
-            23489,
-            24092,
-            12034
-          ],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false
-        }
+    var specData={
+      spec_What:spec_What,
+      spec_Name:spec_Name,
+      spec_Organization:spec_Organization,
+      spec_GetDate :spec_GetDate ,
+      spec_Facebook :spec_Facebook ,
+      spec_Instagram:spec_Instagram,
+      spec_Cafe:spec_Cafe,
+      spec_Blog:spec_Blog
+    }
+    console.log(specData)
+
+    Meteor.call('saveSpec',specData,spec_Number,function(err, rslt) {
+      //서버에서 처리다 하고 응답을 주면 그걸 클라이언트가 실행하는 부분
+      if(err){
+        alert(err)
+      }else{
+        alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
-    })
-  };
-
-
-  Meteor.setTimeout(function(){
-    run()
-  }, 1000)
-});
-
-
-
-// //1.db에 비로 넣기
-// DB_RESUME.insert({
-//   firstNmae: fistName.
-//   credit: credit;
-// });
+    });
+  }
+})
