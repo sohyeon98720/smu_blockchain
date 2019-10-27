@@ -1,6 +1,6 @@
 FlowRouter.route('/Applicant_list', {
     action: function() {
-        BlazeLayout.render('Applicant_list');
+        BlazeLayout.render('/Applicant_list');
     }
 })
 
