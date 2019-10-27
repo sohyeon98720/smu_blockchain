@@ -46,5 +46,6 @@ Template.Applicant_1.events({
     //     alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
     //   }
     // });
+
   }
 })
