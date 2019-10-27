@@ -71,31 +71,32 @@
 
           </div>
 
-          <fieldset>
-            성별:
+          <div id="Applicant_1" class="container">
+            {with board}
+            <section class="Applicant_private">
+            <div>성별: {{gender}}
             <select name="성별" value="성별" id=gender>
               <option value="남성">남성</option>
               <option value="여성">여성</option>
-            </select>
+            </select></div>
             <br><br>
-            생년월일:
-            <input type="date" id=birth>
+            <div>생년월일: {{birth}}
+                <input type="date" id=birth></div>
             <br><br>
-            휴대폰 번호:
-            <input type="text" name="university_name" id=phoneNumber style="ime-mode:active;width:250px">
-
-            <br><br>
-
-            집주소:
-            <input type="text" name="address" id=homeAdd style="ime-mode:active;width:500px">
-            <br><br>
-            이메일 주소:
-            <input type="email" name="email_address" id=email style="width:250px">
-
+            <div>휴대폰 번호: {{phoneNumber}}
+                <input type="text" name="university_name" id=phoneNumber style="ime-mode:active;width:250px"></div>
             <br><br>
 
-          </fieldset>
+            <div>집주소: {{homeAdd}}
+                <input type="text" name="address" id=homeAdd style="ime-mode:active;width:500px"></div>
+            <br><br>
+            <div>이메일 주소: {{email_address}}
+                <input type="email" name="email_address" id=email style="width:250px"></div>
 
+            <br><br>
+            </section>
+            {/with}
+          </div>
           <br><br>
           <button id="btn-submit" class="btn btn-primary btn-lg btn-block">내 원서함에 저장</button>
 
