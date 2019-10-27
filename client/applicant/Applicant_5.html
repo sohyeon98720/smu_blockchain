@@ -73,18 +73,71 @@
 
           </div>
             <br><br>
-            내 원서함 페이지입니다.
-          <br><br>
+            <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+                <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">회원가입 정보</h2>
+
+                        <div >소속: {{profile.p_Type}}</div>
+                        <div >이름: {{profile.p_Name}}</div>
+                        <div>주민번호: {{profile.p_Number}}</div>
+                        <div >기관명: {{profile.c_Name}}</div>
+                        <div>사업자번호: {{profile.c_Number}}</div>
+
+
+                    </div>
+                    <!--        <div class="bg-light shadow-sm mx-auto product-image1" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
+                </div>
+                <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                    <div class="my-3 p-3">
+                        <h2 class="display-5">개인 정보</h2>
+                        <p class="lead">And an even wittier subheading.</p>
+                    </div>
+                    <!--        <div class="bg-dark shadow-sm mx-auto product-image2" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
+                </div>
+            </div>
+
+            <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+                <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                    <div class="my-3 p-3">
+                        <h2 class="display-5">학력</h2>
+                        <p class="lead">And an even wittier subheading.</p>
+                    </div>
+                    <!--        <div class="bg-dark shadow-sm mx-auto product-image3" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
+                </div>
+                <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">경력</h2>
+                        <p class="lead">And an even wittier subheading.</p>
+                    </div>
+                    <!--        <div class="bg-light shadow-sm mx-auto product-image4" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
+                </div>
+            </div>
+
+            <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+                <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">개인 역량</h2>
+
+
+
+                    </div>
+                    <!--        <div class="bg-light shadow-sm mx-auto product-image1" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
+                </div>
+            </div>
+
+            <br><br>
             {{#with userInfo}}
             <!-- id 하나당 반복-->
                 <section class="jumbotron mt-4">
-                    <h1 class="text-center">{{profile.p_Name}}</h1>
-                    <div class="text-center">소속: {{profile.p_Type}}</div>
-                    <div class="text-center">이름: {{profile.p_Name}}</div>
-                    <div class="text-center">주민번호: {{profile.p_Number}}</div>
-                    <div class="text-center">기관명: {{profile.c_Name}}</div>
-                    <div class="text-center">사업자번호: {{profile.c_Number}}</div>
-                    <div class="mt-2 text-center">{{{content}}}</div>
+                    <h1>{{profile.p_Name}}</h1>
+                    <h2>학력</h2>
+                    <div >소속: {{profile.p_Type}}</div>
+                    <div >이름: {{profile.p_Name}}</div>
+                    <div>주민번호: {{profile.p_Number}}</div>
+                    <div >기관명: {{profile.c_Name}}</div>
+                    <div>사업자번호: {{profile.c_Number}}</div>
+                    <div>{{{content}}}</div>
                 </section>
             {{/with}}
             <br><br>
