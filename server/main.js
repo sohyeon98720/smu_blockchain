@@ -204,9 +204,10 @@ Meteor.methods({
 
   saveEdu: function (eduData, uni_GraduNumber) {
     var userInfo = Meteor.user();
-    Meteor.users.update({_id: userInfo._id}, {
-      $set: {
-        'profile.uni_Year': eduData.uni_Year,
+   // if(userInfo.profile.p_Type!=1){
+      Meteor.users.update({_id: userInfo._id}, {
+        $set: {
+          'profile.uni_Year': eduData.uni_Year,
           'profile.uni_Name': eduData.uni_Name,
           'profile.uni_Region': eduData.uni_Region,
           'profile.uni_Major': eduData.uni_Major,
@@ -223,8 +224,12 @@ Meteor.methods({
           'profile.uni_File': eduData.uni_File,
           'profile.uni_Journal': eduData.uni_Journal,
           'profile.uni_GraduNumber':uni_GraduNumber
-      }
-    })
+        }
+      })
+   // }else{
+    //  return "권한이 없습니다."
+    //}
+
     //블록체인
     // last.setEdu.sendTransaction(uni_GraduNumber, {
     //   from: web3.eth.coinbase,
@@ -236,7 +241,6 @@ Meteor.methods({
     //   }
     // })
     //DB
-
     return "원서함에 저장되었습니다"
   },
   saveCareer: function (careerData, com_Number) {
@@ -288,6 +292,26 @@ Meteor.methods({
       }
     })
     return "원서함에 저장되었습니다"
+  },
+  saveComApply: function(comApply){
+
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.comApply': comApply
+      }
+    })
+    return "경력 인증 요청이 되었습니다"
+  },
+  saveUniApply: function(uniApply){
+
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.uniApply': uniApply
+      }
+    })
+    return "학력 인증 요청이 되었습니다"
   }
 
 })
