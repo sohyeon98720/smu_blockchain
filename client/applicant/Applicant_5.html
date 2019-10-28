@@ -128,16 +128,16 @@
                 <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
                     <div class="my-3 py-3">
                         <h2 class="display-5">경력</h2>
-                        <div >회사명 : {{profile.gender}}</div>
-                        <div >입사날짜 : {{profile.birth}}</div>
-                        <div>퇴사날짜 : {{profile.phoneNumber}}</div>
-                        <div >퇴사 : {{profile.homeAdd}}</div>
-                        <div>발급번호 : {{profile.email}}</div>
-                        <div >파일첨부  : {{profile.gender}}</div>
-                        <div >퇴사사유  : {{profile.birth}}</div>
-                        <div>직급  : {{profile.phoneNumber}}</div>
-                        <div >부서  : {{profile.homeAdd}}</div>
-                        <div>근무지역  : {{profile.email}}</div>
+                        <div >회사명 : {{profile.com_Name}}</div>
+                        <div >입사날짜 : {{profile.com_BeginDate}}</div>
+                        <div>퇴사날짜 : {{profile.com_EndDate}}</div>
+                        <div >퇴사 : {{profile.com_HowEnd}}</div>
+                        <div>발급번호 : {{profile.com_Number}}</div>
+                        <div >파일첨부 : {{profile.com_File}}</div>
+                        <div >퇴사사유 : {{profile.com_EndReason}}</div>
+                        <div>직급 : {{profile.com_Position}}</div>
+                        <div >부서 : {{profile.com_Field}}</div>
+                        <div>근무지역 : {{profile.com_Region}}</div>
 
                     </div>
                     <!--        <div class="bg-light shadow-sm mx-auto product-image4" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
@@ -149,12 +149,27 @@
                     <div class="my-3 py-3">
                         <h2 class="display-5">개인 역량</h2>
 
-
-
+                        <div >항목선택 : {{profile.spec_What}}</div>
+                        <div >자격증명 : {{profile.spec_Name}}</div>
+                        <div>발행처 : {{profile.spec_Organization}}</div>
+                        <div >자격증발급 번호 : {{profile.spec_Number}}</div>
+                        <div>취득일 : {{profile.spec_GetDate}}</div>
+                        <div >페이스북 : {{profile.spec_Facebook}}</div>
+                        <div >인스타 : {{profile.spec_Instagram}}</div>
+                        <div>네이버카페 : {{profile.spec_Cafe}}</div>
+                        <div >네이버블로그 : {{profile.spec_Blog}}</div>
                     </div>
                     <!--        <div class="bg-light shadow-sm mx-auto product-image1" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
                 </div>
+                <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">인증 여부</h2>
+                        <p class="lead">And an even wittier subheading.</p>
+                    </div>
+<!--                    <div class="bg-white shadow-sm mx-auto product-image8" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>-->
+                </div>
             </div>
+
 
             <br><br>
             {{#with userInfo}}
