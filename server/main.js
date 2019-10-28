@@ -63,7 +63,7 @@ Meteor.methods({
   // },
   getInfo: function () {
     //인적사항 확인
-    var a=last.getInfo.call().toString();
+    var a = last.getInfo.call().toString();
     console.log(a);
   },
   getEdu:function(){
@@ -285,6 +285,8 @@ Meteor.methods({
         'profile.spec_Cafe': specData.spec_Cafe,
         'profile.spec_Blog': specData.spec_Blog,
         'profile.spec_Number': spec_Number
+      }
+    })
   }
   })
 
@@ -318,4 +320,5 @@ Meteor.methods({
 //   // })
 //   // console.log(CodeasyFiles.insert)
 //   // console.log(process.env.ROOT_URL)
-//   // });
+// });
+//
