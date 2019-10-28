@@ -1,39 +1,39 @@
 <template name="Company_1">
-  {{> ex_navbar}}
-  <id id="Company_1">
-    <!-- navar 정보 -->
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">스뮤 Block</a> -->
-      <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-      <!-- <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul> -->
-    </nav>
+    {{> ex_navbar}}
+    <id id="Company_1">
+        <!-- navar 정보 -->
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">스뮤 Block</a> -->
+            <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+            <!-- <ul class="navbar-nav px-3">
+              <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+              </li>
+            </ul> -->
+        </nav>
 
     <!-- 목록 -->
     <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
 
-              <li class="nav-item">
-                <a class="nav-link " href="/Company_1">
-                  <span data-feather="file"></span>
-                  경력 인증하기
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="/Company_2">
-                  <span data-feather="file"></span>
-
-                </a>입사 지원자 보기
-              </li>
-            </ul>
-          </div>
-        </nav>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Company_1">
+                                <span data-feather="file"></span>
+                                경력 인증 하기
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Company_2">
+                                <span data-feather="file"></span>
+                                입사 지원자 보기
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -63,7 +63,7 @@
                     <tbody>
                     {{#each data1}}
                         <tr>
-                            <td scope="row">{{profile.p_Name}}</td>
+<!--                            <td scope="row">{{profile.p_Name}}</td>-->
                             <td><a href="/company1#">{{profile.p_Name}}</a></td>
                             <td>{{profile.birth}}</td>
                             <td>{{profile.email}}</td>
