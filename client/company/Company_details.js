@@ -14,3 +14,18 @@ Template.Company_datails.helpers({
     }
 
 })
+
+Template.Company_datails.events({
+    //경력인증요청 버튼이 눌리면
+    'click #btn-submit': function(evt) {
+        evt.preventDefault();
+        var comApply=true;
+        Meteor.call('saveUniAuthor',comApply,function (err,rslt) {
+            if(err){
+                alert(err)
+            }else{
+                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
+            }
+        });
+    }
+})

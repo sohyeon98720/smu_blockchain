@@ -315,6 +315,28 @@ Meteor.methods({
       }
     })
     return "학력 인증 요청이 되었습니다"
+  },
+  saveComAuthor: function(com_Author){
+
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.com_Author': com_Author,
+        'profile.comApply':false
+      }
+    })
+    return "경력 인증이 완료되었습니다"
+  },
+  saveUniAuthor: function(uni_Author){
+
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.uni_Author': uni_Author,
+        'profile.uniApply':false
+      }
+    })
+    return "학력 인증이 완료되었습니다"
   }
 
 })
