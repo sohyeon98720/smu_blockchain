@@ -17,7 +17,33 @@ Template.Applicant_5.onRendered(function() {
 
 Template.Applicant_5.helpers({
   userInfo: function() {
-    var _id=FlowRouter.getParam('_id')
-    return Meteor.users.findOne({_id: _id});
+    return Meteor.users.findOne({_id:Meteor.user()._id});
+  }
+})
+
+Template.Applicant_5.events({
+  //경력인증요청 버튼이 눌리면
+  'click #btn-submit1': function(evt) {
+    evt.preventDefault();
+    var comApply=true;
+    Meteor.call('saveComApply',comApply,function (err,rslt) {
+      if(err){
+        alert(err)
+      }else{
+        alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
+      }
+    });
+  },
+  //학력인증요청 버튼이 눌리면
+  'click #btn-submit2': function(evt) {
+    evt.preventDefault();
+    var uniApply=true;
+    Meteor.call('saveUniApply',uniApply,function (err,rslt) {
+      if(err){
+        alert(err)
+      }else{
+        alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
+      }
+    });
   }
 })
