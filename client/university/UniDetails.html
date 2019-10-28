@@ -22,9 +22,28 @@
                 <div>학점: {{profile.uni_Grade}}</div>
                 <div>총학점: {{profile.uni_Total}}</div>
                 <div>학점발급번호: {{profile.uni_GradeNumber}}</div>
-                <div class="mt-2 text-center">{{{content}}}</div>
             </section>
         {{/with}}
+                <br><br>
+
+            <h4 class="mb-3">인증 여부</h4>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="credit">승인</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="debit">알 수 없음</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="paypal">거절</label>
+                    </div>
+                    <br><br>
+                    <button id="btn-submit" class="btn btn-info"><a href="/Uni"> 제출 </a></button>
+                </div>
+
     </div>
     {{> ex_footer}}
 </template>
