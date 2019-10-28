@@ -19,8 +19,8 @@ Template.Company_datails.events({
     //경력인증요청 버튼이 눌리면
     'click #btn-submit': function(evt) {
         evt.preventDefault();
-        var comApply=true;
-        Meteor.call('saveUniAuthor',comApply,function (err,rslt) {
+        var com_Author="승인";
+        Meteor.call('saveComAuthor',com_Author,function (err,rslt) {
             if(err){
                 alert(err)
             }else{
