@@ -19,8 +19,9 @@ Template.Company_datails.events({
     //경력인증요청 버튼이 눌리면
     'click #btn-submit1': function(evt) {
         evt.preventDefault();
+        var _id = FlowRouter.getParam('_id');
         var com_Author="승인";
-        Meteor.call('saveComAuthor',com_Author,function (err,rslt) {
+        Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
                 alert(err)
             }else{
@@ -30,8 +31,9 @@ Template.Company_datails.events({
     },
     'click #btn-submit2': function(evt) {
         evt.preventDefault();
+        var _id = FlowRouter.getParam('_id');
         var com_Author="알 수 없음";
-        Meteor.call('saveComAuthor',com_Author,function (err,rslt) {
+        Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
                 alert(err)
             }else{
@@ -41,8 +43,9 @@ Template.Company_datails.events({
     },
     'click #btn-submit3': function(evt) {
         evt.preventDefault();
+        var _id = FlowRouter.getParam('_id');
         var com_Author="거절";
-        Meteor.call('saveComAuthor',com_Author,function (err,rslt) {
+        Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
                 alert(err)
             }else{

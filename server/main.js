@@ -316,10 +316,10 @@ Meteor.methods({
     })
     return "학력 인증 요청이 되었습니다"
   },
-  saveComAuthor: function(com_Author){
+  saveComAuthor: function(com_Author,_id){
 
-    var userInfo = Meteor.user();
-    Meteor.users.update({_id: userInfo._id}, {
+    //var userInfo = Meteor.user();
+    Meteor.users.update({_id:_id}, {
       $set: {
         'profile.com_Author': com_Author,
         'profile.comApply':false
