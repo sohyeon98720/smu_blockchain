@@ -299,7 +299,8 @@ Meteor.methods({
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
-        'profile.comApply': comApply
+        'profile.comApply': comApply,
+        'profile.com_Author':"확인 중"
       }
     })
     return "경력 인증 요청이 되었습니다"
@@ -309,7 +310,8 @@ Meteor.methods({
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
-        'profile.uniApply': uniApply
+        'profile.uniApply': uniApply,
+        'profile.uni_Author':"확인 중"
       }
     })
     return "학력 인증 요청이 되었습니다"
