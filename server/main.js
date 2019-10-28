@@ -241,6 +241,7 @@ Meteor.methods({
     //   }
     // })
     //DB
+
     return "원서함에 저장되었습니다"
   },
   saveCareer: function (careerData, com_Number) {
