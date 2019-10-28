@@ -325,7 +325,7 @@ Meteor.methods({
     })
     return "경력 인증이 완료되었습니다"
   },
-  saveUniAuthor: function(uni_Author){
+  saveUniAuthor: function(uni_Author,_id){
     Meteor.users.update({_id:_id}, {
       $set: {
         'profile.uni_Author': uni_Author,
