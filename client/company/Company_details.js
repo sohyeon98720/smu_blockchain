@@ -1,24 +1,16 @@
-FlowRouter.route('/Company_details', {
+//FlowRouter.template('/Company_1/:p_Name');
+
+FlowRouter.route('/Company_1/:_id', {
     action: function() {
-        BlazeLayout.render('Company_details');
+        BlazeLayout.render('Company_datails');
     }
 })
-Template.Company_details.onRendered(function() {
-    run = function () {
-        Meteor.call('getEduRequest',function(err,result){
-            if(err){
-                alert(err);
-            }
-            else{
-                Session.set('uni_data',result);
-            }
-        })
-    }
-});
 
-
-Template.Company_details.helpers({
-    data1:function(){
-        return Session.get('uni_data');
+Template.Company_datails.helpers({
+    detail:function(){
+    var _id = FlowRouter.getParam('_id');
+    console.log(_id);
+    return Meteor.users.findOne({_id: _id});
     }
+
 })
