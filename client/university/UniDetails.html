@@ -1,0 +1,30 @@
+<template name="UniDetails">
+    {{> ex_navbar}}
+    <div id="ex_post" class="container">
+        {{#with student}}
+            <section class="jumbotron mt-4">
+                <h1 class="text-center">{{profile.p_Name}}</h1>
+                <div>이름: {{profile.p_Name}}</div>
+                <div>생년월일: {{profile.birth}}</div>
+                <div>이메일주소: {{profile.email}}</div>
+                <div>대학 년제: {{profile.uni_Name}}</div>
+                <div>대학명: {{profile.uni_Name}}</div>
+                <div>지역: {{profile.uni_Region}}</div>
+                <div>전공: {{profile.uni_Major}}</div>
+                <div>전공계열: {{profile.uni_MajorBelong}}</div>
+                <div>학과: {{profile.uni_Department}}</div>
+                <div>입학날짜: {{profile.uni_BeginDate}}</div>
+                <div>입학: {{profile.uni_HowBegin}}</div>
+                <div>졸업날짜: {{profile.uni_EndDate}}</div>
+                <div>졸업: {{profile.uni_HowEnd}}</div>
+                <div>졸업발급번호: {{profile.uni_GraduNumber}}</div>
+                <div>주간/야간: {{profile.uni_DaynNight}}</div>
+                <div>학점: {{profile.uni_Grade}}</div>
+                <div>총학점: {{profile.uni_Total}}</div>
+                <div>학점발급번호: {{profile.uni_GradeNumber}}</div>
+                <div class="mt-2 text-center">{{{content}}}</div>
+            </section>
+        {{/with}}
+    </div>
+    {{> ex_footer}}
+</template>
