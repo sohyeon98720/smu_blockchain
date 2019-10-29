@@ -18,7 +18,20 @@ Template.Applicant_5.onRendered(function() {
 Template.Applicant_5.helpers({
   userInfo: function() {
     return Meteor.users.findOne({_id:Meteor.user()._id});
+  },
+  contents: function() {
+    //CONTENTS 데이터베이스를 화면에 전달
+    return Meteor.users.find();
+  },
+  createdAt: function() {
+    //화면에 보이는 날짜 데이터를 정해진 포맷으로 변환하여 전달
+    return Codeasy.utils.getStringYMDFromDate(this.createdAt);
+  },
+  link: function() {
+    // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
+    return Codeasy.utils.getFileLink(this.file._id)
   }
+
 })
 
 Template.Applicant_5.events({
