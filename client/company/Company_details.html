@@ -1,31 +1,111 @@
-<template name="Company_datails">
+<template name="Company_details">
     {{> ex_navbar}}
-    <div id="Company_details" class="container">
-        {{#with detail}}
-                 <section class="jumbotron mt-4">
-                     <h1 class="text_center"> {{profile.p_Name}}</h1>
-                     <div>연락처: {{profile.phoneNumber}}</div>
-                     <div>주소: {{profile.homeAdd}}</div>
-                     <div>회사명: {{profile.com_Name}}</div>
-                     <div>입사날짜: {{profile.com_BeginDate}}</div>
-                     <div>퇴사날짜: {{profile.com_EndDate}}</div>
-                     <div>퇴사: {{profile.com_HowEnd}}</div>
-                     <div>발급번호: {{profile.com_Number}}</div>
-                     <div>파일첨부: {{profile.com_File}}</div>
-                     <div>퇴사사유: {{profile.com_EndReason}}</div>
-                     <div>퇴사사유: {{profile.com_EndReason}}</div>
-                     <div>직급: {{profile.com_Position}}</div>
-                     <div>부서: {{profile.com_Field}}</div>
-                     <div>근무지역: {{profile.com_Region}}</div>
-                 </section>
-        {{/with}}
+    <id id="Company_details">
+        <!-- navar 정보 -->
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">스뮤 Block</a> -->
+            <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+            <!-- <ul class="navbar-nav px-3">
+              <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+              </li>
+            </ul> -->
+        </nav>
 
+        <!-- 목록 -->
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
 
-        <h3 class="mb-3">인증 여부</h3>
-        <br>
-        <button id="btn-submit1" class="btn btn-info" onclick="location.href='/Company_1'"> 승인 </button>
-        <button id="btn-submit2" class="btn btn-info" onclick="location.href='/Company_1'"> 알 수 없음 </button>
-        <button id="btn-submit3" class="btn btn-info" onclick="location.href='/Company_1'"> 거절 </button>
-    </div>
-    {{> ex_footer}}
+                            <li class="nav-item">
+                                <a class="nav-link " href="/Company_1">
+                                    <span data-feather="file"></span>
+                                    경력 인증 하기
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="/Company_2">
+                                    <span data-feather="file"></span>
+                                    입사 지원자 보기
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- 정보입력 -->
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">경력 인증 하기</h1>
+
+                        <!-- <div class="btn-toolbar mb-2 mb-md-0"> -->
+                        <!-- <div class="btn-group mr-2">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Button1</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Button2</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                          <span data-feather="calendar"></span>
+                          This week
+                        </button>
+                      </div> -->
+
+                        <!-- </div> -->
+                    </div>
+                    <div class="row">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">연락처</th>
+                                <th scope="col">주소</th>
+                                <th scope="col">회사명</th>
+                                <th scope="col">입사날짜</th>
+                                <th scope="col">퇴사날짜</th>
+                                <th scope="col">퇴사</th>
+                                <th scope="col">발급번호</th>
+                                <th scope="col">퇴사사유</th>
+                                <th scope="col">직급</th>
+                                <th scope="col">부서</th>
+                                <th scope="col">근무지역</th>
+                                <th scope="col">파일첨부</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#with detail}}
+                                <tr>
+                                    <!--                            <td scope="row">{{profile.p_Name}}</td>-->
+<!--                                    <td><a href="/Company_2/{{this._id}}">{{profile.p_Name}}</a></td>-->
+                                    <td>{{profile.p_Name}}</td>
+                                    <td>{{profile.phoneNumber}}</td>
+                                    <td>{{profile.homeAdd}}</td>
+                                    <td>{{profile.com_Name}}</td>
+                                    <td>{{profile.com_BeginDate}}</td>
+                                    <td>{{profile.com_EndDate}}</td>
+                                    <td>{{profile.com_Number}}</td>
+                                    <td>{{profile.com_EndReason}}</td>
+                                    <td>{{profile.com_Position}}</td>
+                                    <td>{{profile.com_Field}}</td>
+                                    <td>{{profile.com_Region}}</td>
+                                    <td>{{profile.com_File}}</td>
+                                    <td><button id="btn-remove" class="close" style="float: left;">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button></td>
+                                </tr>
+                            {{/with}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <br><br>
+                    <h3 class="mb-3">인증 여부</h3>
+                    <br>
+                    <button id="btn-submit1" class="btn btn-info"><a href="/Uni"> 승인 </a></button>
+                    <button id="btn-submit2" class="btn btn-info"><a href="/Uni"> 알 수 없음 </a></button>
+                    <button id="btn-submit3" class="btn btn-info"><a href="/Uni"> 거절 </a></button>
+                </main>
+            </div>
+        </div>
+    </id>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </template>
