@@ -204,7 +204,7 @@ Meteor.methods({
 
   saveEdu: function (eduData, uni_GraduNumber) {
     var userInfo = Meteor.user();
-   // if(userInfo.profile.p_Type!=1){
+   // if(userInfo.profile.p_Type === "지원자"){
       Meteor.users.update({_id: userInfo._id}, {
         $set: {
           'profile.uni_Year': eduData.uni_Year,
@@ -246,21 +246,26 @@ Meteor.methods({
   },
   saveCareer: function (careerData, com_Number) {
     var userInfo = Meteor.user();
+    // if(userInfo.profile.p_Type === "지원자"){
+      Meteor.users.update({_id: userInfo._id}, {
+        $set: {
+          'profile.com_Name': careerData.com_Name,
+          'profile.com_BeginDate': careerData.com_BeginDate,
+          'profile.com_EndDate': careerData.com_EndDate,
+          'profile.com_HowEnd': careerData.com_HowEnd,
+          'profile.com_File': careerData.com_File,
+          'profile.com_EndReason': careerData.com_EndReason,
+          'profile.com_Position': careerData.com_Position,
+          'profile.com_Field': careerData.com_Field,
+          'profile.com_Region': careerData.com_Region,
+          'profile.com_Number': com_Number
+        }
+      })
+       return "원서함에 저장되었습니다."
+    // }else{
+    //   return "권한이 없습니다."
+    // }
 
-    Meteor.users.update({_id: userInfo._id}, {
-      $set: {
-        'profile.com_Name': careerData.com_Name,
-        'profile.com_BeginDate': careerData.com_BeginDate,
-        'profile.com_EndDate': careerData.com_EndDate,
-        'profile.com_HowEnd': careerData.com_HowEnd,
-        'profile.com_File': careerData.com_File,
-        'profile.com_EndReason': careerData.com_EndReason,
-        'profile.com_Position': careerData.com_Position,
-        'profile.com_Field': careerData.com_Field,
-        'profile.com_Region': careerData.com_Region,
-        'profile.com_Number': com_Number
-      }
-    })
     // last.setCareer.sendTransaction(com_Number, {
     //   from: web3.eth.coinbase,
     // }, function (error, transactionHash) {
@@ -273,7 +278,6 @@ Meteor.methods({
     // console.log(com_Number);
 
 
-    return "원서함에 저장되었습니다."
   },
   saveSpec: function(specData,spec_Number){
     console.log(spec_Number);
@@ -317,13 +321,18 @@ Meteor.methods({
     return "학력 인증 요청이 되었습니다."
   },
   saveComAuthor: function(com_Author,_id){
+    //var userInfo = Meteor.user();
+    //if(userInfo.profile.p_Type === "기업"){
     Meteor.users.update({_id:_id}, {
-      $set: {
-        'profile.com_Author': com_Author,
-        'profile.comApply':false
-      }
-    })
-    return "경력 인증이 완료되었습니다."
+        $set: {
+          'profile.com_Author': com_Author,
+          'profile.comApply':false
+        }
+      })
+      return "경력 인증이 완료되었습니다."
+    // }else{
+    //  return "권한이 없습니다."
+    // }
   },
   saveUniAuthor: function(uni_Author,_id){
     Meteor.users.update({_id:_id}, {
