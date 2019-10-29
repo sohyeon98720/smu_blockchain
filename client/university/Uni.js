@@ -15,7 +15,7 @@ Template.Uni.onRendered(function() {
 
 Template.Uni.helpers({
   students: function() {
-    return Meteor.users.find({"profile.uniApply":true});
+    return Meteor.users.find({"proficommitle.uniApply":true});
 
   }
 })
