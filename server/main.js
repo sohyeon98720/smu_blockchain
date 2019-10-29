@@ -309,6 +309,7 @@ Meteor.methods({
     })
     return "경력 인증 요청이 되었습니다."
   },
+
   saveUniApply: function(uniApply){
 
     var userInfo = Meteor.user();
@@ -320,6 +321,7 @@ Meteor.methods({
     })
     return "학력 인증 요청이 되었습니다."
   },
+
   saveComAuthor: function(com_Author,_id){
     //var userInfo = Meteor.user();
     //if(userInfo.profile.p_Type === "기업"){
