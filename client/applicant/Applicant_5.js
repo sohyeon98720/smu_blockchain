@@ -45,5 +45,17 @@ Template.Applicant_5.events({
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
     });
+  },
+  //이력서 제출 버튼이 눌리면
+  'click #btn-submit3': function(evt) {
+    evt.preventDefault();
+    var submitAll=true;
+    Meteor.call('saveSubmitAll',submitAll,function (err,rslt) {
+      if(err){
+        alert(err)
+      }else{
+        alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
+      }
+    });
   }
 })

@@ -333,6 +333,15 @@ Meteor.methods({
       }
     })
     return "학력 인증이 완료되었습니다"
+  },
+  saveSubmitAll: function(submitAll,_id){
+    var userInfo = Meteor.user();
+    Meteor.users.update({_id: userInfo._id}, {
+      $set: {
+        'profile.submitAll': submitAll
+      }
+    })
+    return "이력서 제출이 완료되었습니다"
   }
 
 })
