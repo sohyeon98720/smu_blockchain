@@ -12,7 +12,7 @@ Template.Company_2.helpers({
 
     //return Meteor.users.find({_id:Meteor.user()._id}).fetch();
     //return Meteor.users.find({profile:{comApply:true}}).fetch();
-    return Meteor.users.find({$and:[{"profile.com_Author":true,"profile.uni_Author":true}]});
+    return Meteor.users.find({"profile.submitAll":true});
 
   }
 
