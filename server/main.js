@@ -336,12 +336,17 @@ Meteor.methods({
   },
   saveSubmitAll: function(submitAll,_id){
     var userInfo = Meteor.user();
-    Meteor.users.update({_id: userInfo._id}, {
-      $set: {
-        'profile.submitAll': submitAll
-      }
-    })
-    return "이력서 제출이 완료되었습니다"
+    if(userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author === '승인'){
+      Meteor.users.update({_id: userInfo._id}, {
+        $set: {
+          'profile.submitAll': submitAll
+        }
+      })
+      return "이력서 제출이 완료되었습니다"
+    }else{
+      return "이력서 제출이 불가합니다"
+    }
+
   }
 
 })
