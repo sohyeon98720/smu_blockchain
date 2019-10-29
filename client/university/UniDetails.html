@@ -24,13 +24,13 @@
                 <div>학점발급번호: {{profile.uni_GradeNumber}}</div>
             </section>
         {{/with}}
-                <br><br>
+
 
             <h3 class="mb-3">인증 여부</h3>
-                    <br>
-                    <button id="btn-submit1" class="btn btn-info"><a href="/Uni"> 승인 </a></button>
-                    <button id="btn-submit2" class="btn btn-info"><a href="/Uni"> 알 수 없음 </a></button>
-                    <button id="btn-submit3" class="btn btn-info"><a href="/Uni"> 거절 </a></button>
+                <br>
+                <button id="btn-submit1" class="btn btn-info" onclick="location.href='/Uni'"> 승인 </button>
+                <button id="btn-submit2" class="btn btn-info" onclick="location.href='/Uni'"> 알 수 없음 </button>
+                <button id="btn-submit3" class="btn btn-info" onclick="location.href='/Uni'"> 거절 </button>
 
     </div>
     {{> ex_footer}}
