@@ -2,11 +2,11 @@
 
 FlowRouter.route('/Company_1/:_id', {
     action: function() {
-        BlazeLayout.render('Company_datails');
+        BlazeLayout.render('Company_details');
     }
 })
 
-Template.Company_datails.helpers({
+Template.Company_details.helpers({
     detail:function(){
     var _id = FlowRouter.getParam('_id');
     console.log(_id);
@@ -15,7 +15,7 @@ Template.Company_datails.helpers({
 
 })
 
-Template.Company_datails.events({
+Template.Company_details.events({
     //경력인증요청 버튼이 눌리면
     'click #btn-submit1': function(evt) {
         evt.preventDefault();

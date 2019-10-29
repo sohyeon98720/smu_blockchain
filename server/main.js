@@ -199,12 +199,12 @@ Meteor.methods({
         'profile.birth': infoData.birth
       }
     })
-    return "원서함에 저장되었습니다"
+    return "원서함에 저장되었습니다."
   },
 
   saveEdu: function (eduData, uni_GraduNumber) {
     var userInfo = Meteor.user();
-   // if(userInfo.profile.p_Type!=1){
+   // if(userInfo.profile.p_Type === "지원자"){
       Meteor.users.update({_id: userInfo._id}, {
         $set: {
           'profile.uni_Year': eduData.uni_Year,
@@ -242,25 +242,30 @@ Meteor.methods({
     // })
     //DB
 
-    return "원서함에 저장되었습니다"
+    return "원서함에 저장되었습니다."
   },
   saveCareer: function (careerData, com_Number) {
     var userInfo = Meteor.user();
+    // if(userInfo.profile.p_Type === "지원자"){
+      Meteor.users.update({_id: userInfo._id}, {
+        $set: {
+          'profile.com_Name': careerData.com_Name,
+          'profile.com_BeginDate': careerData.com_BeginDate,
+          'profile.com_EndDate': careerData.com_EndDate,
+          'profile.com_HowEnd': careerData.com_HowEnd,
+          'profile.com_File': careerData.com_File,
+          'profile.com_EndReason': careerData.com_EndReason,
+          'profile.com_Position': careerData.com_Position,
+          'profile.com_Field': careerData.com_Field,
+          'profile.com_Region': careerData.com_Region,
+          'profile.com_Number': com_Number
+        }
+      })
+       return "원서함에 저장되었습니다."
+    // }else{
+    //   return "권한이 없습니다."
+    // }
 
-    Meteor.users.update({_id: userInfo._id}, {
-      $set: {
-        'profile.com_Name': careerData.com_Name,
-        'profile.com_BeginDate': careerData.com_BeginDate,
-        'profile.com_EndDate': careerData.com_EndDate,
-        'profile.com_HowEnd': careerData.com_HowEnd,
-        'profile.com_File': careerData.com_File,
-        'profile.com_EndReason': careerData.com_EndReason,
-        'profile.com_Position': careerData.com_Position,
-        'profile.com_Field': careerData.com_Field,
-        'profile.com_Region': careerData.com_Region,
-        'profile.com_Number': com_Number
-      }
-    })
     // last.setCareer.sendTransaction(com_Number, {
     //   from: web3.eth.coinbase,
     // }, function (error, transactionHash) {
@@ -273,7 +278,6 @@ Meteor.methods({
     // console.log(com_Number);
 
 
-    return "원서함에 저장되었습니다"
   },
   saveSpec: function(specData,spec_Number){
     console.log(spec_Number);
@@ -292,7 +296,7 @@ Meteor.methods({
           'profile.spec_Number': spec_Number
       }
     })
-    return "원서함에 저장되었습니다"
+    return "원서함에 저장되었습니다."
   },
   saveComApply: function(comApply){
 
@@ -303,7 +307,7 @@ Meteor.methods({
         'profile.com_Author':"확인 중"
       }
     })
-    return "경력 인증 요청이 되었습니다"
+    return "경력 인증 요청이 되었습니다."
   },
   saveUniApply: function(uniApply){
 
@@ -314,16 +318,21 @@ Meteor.methods({
         'profile.uni_Author':"확인 중"
       }
     })
-    return "학력 인증 요청이 되었습니다"
+    return "학력 인증 요청이 되었습니다."
   },
   saveComAuthor: function(com_Author,_id){
+    //var userInfo = Meteor.user();
+    //if(userInfo.profile.p_Type === "기업"){
     Meteor.users.update({_id:_id}, {
-      $set: {
-        'profile.com_Author': com_Author,
-        'profile.comApply':false
-      }
-    })
-    return "경력 인증이 완료되었습니다"
+        $set: {
+          'profile.com_Author': com_Author,
+          'profile.comApply':false
+        }
+      })
+      return "경력 인증이 완료되었습니다."
+    // }else{
+    //  return "권한이 없습니다."
+    // }
   },
   saveUniAuthor: function(uni_Author,_id){
     Meteor.users.update({_id:_id}, {
@@ -332,7 +341,27 @@ Meteor.methods({
         'profile.uniApply':false
       }
     })
-    return "학력 인증이 완료되었습니다"
+    return "학력 인증이 완료되었습니다."
+  },
+  saveSubmitAll: function(submitAll,_id){
+    var userInfo = Meteor.user();
+    if(userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author === '승인'){
+      Meteor.users.update({_id: userInfo._id}, {
+        $set: {
+          'profile.submitAll': submitAll
+        }
+      })
+      return "이력서 제출이 완료되었습니다."
+    } else if(userInfo.profile.com_Author === '확인 중' || userInfo.profile.uni_Author === '확인 중'){
+      return "이력서 제출이 불가합니다. 인증 확인중입니다. 승인 후 제출해주세요."
+    } else if(userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author !== '승인'){
+      return "이력서 제출이 불가합니다. 학력 확인 부탁드립니다."
+    }else if(userInfo.profile.com_Author !== '승인' && userInfo.profile.uni_Author === '승인') {
+      return "이력서 제출이 불가합니다. 경력 확인 부탁드립니다."
+    }else{
+      return "이력서 제출이 불가합니다. 학력, 경력 확인 부탁드립니다."
+    }
+
   }
 
 })

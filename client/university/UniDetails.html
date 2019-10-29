@@ -1,37 +1,116 @@
 <template name="UniDetails">
     {{> ex_navbar}}
-    <div id="ex_post" class="container">
-        {{#with student}}
-            <section class="jumbotron mt-4">
-                <h1 class="text-center">{{profile.p_Name}}</h1>
-                <div>이름: {{profile.p_Name}}</div>
-                <div>생년월일: {{profile.birth}}</div>
-                <div>이메일주소: {{profile.email}}</div>
-                <div>대학 년제: {{profile.uni_Name}}</div>
-                <div>대학명: {{profile.uni_Name}}</div>
-                <div>지역: {{profile.uni_Region}}</div>
-                <div>전공: {{profile.uni_Major}}</div>
-                <div>전공계열: {{profile.uni_MajorBelong}}</div>
-                <div>학과: {{profile.uni_Department}}</div>
-                <div>입학날짜: {{profile.uni_BeginDate}}</div>
-                <div>입학: {{profile.uni_HowBegin}}</div>
-                <div>졸업날짜: {{profile.uni_EndDate}}</div>
-                <div>졸업: {{profile.uni_HowEnd}}</div>
-                <div>졸업발급번호: {{profile.uni_GraduNumber}}</div>
-                <div>주간/야간: {{profile.uni_DaynNight}}</div>
-                <div>학점: {{profile.uni_Grade}}</div>
-                <div>총학점: {{profile.uni_Total}}</div>
-                <div>학점발급번호: {{profile.uni_GradeNumber}}</div>
-            </section>
-        {{/with}}
-                <br><br>
+    <id id="UniDetails">
+        <!-- navar 정보 -->
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">스뮤 Block</a> -->
+            <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+            <!-- <ul class="navbar-nav px-3">
+              <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+              </li>
+            </ul> -->
+        </nav>
 
-            <h3 class="mb-3">인증 여부</h3>
+        <!-- 목록 -->
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+
+                            <li class="nav-item">
+                                <a class="nav-link " href="/Uni">
+                                    <span data-feather="file"></span>
+                                    인증하기
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- 정보입력 -->
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">학력 인증 하기</h1>
+
+                        <!-- <div class="btn-toolbar mb-2 mb-md-0"> -->
+                        <!-- <div class="btn-group mr-2">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Button1</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Button2</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                          <span data-feather="calendar"></span>
+                          This week
+                        </button>
+                      </div> -->
+
+                        <!-- </div> -->
+                    </div>
+                    <div class="row">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">생년월일</th>
+                                <th scope="col">이메일주소</th>
+                                <th scope="col">대학 년제</th>
+                                <th scope="col">대학명</th>
+                                <th scope="col">지역</th>
+                                <th scope="col">전공</th>
+                                <th scope="col">전공계열</th>
+                                <th scope="col">학과</th>
+                                <th scope="col">입학날짜</th>
+                                <th scope="col">입학</th>
+                                <th scope="col">졸업날짜</th>
+                                <th scope="col">졸업</th>
+                                <th scope="col">졸업발급번호</th>
+                                <th scope="col">주간/야간</th>
+                                <th scope="col">학점</th>
+                                <th scope="col">총학점</th>
+                                <th scope="col">학점발급번호</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#with student}}
+                                <tr>
+                                    <!--                            <td scope="row">{{profile.p_Name}}</td>-->
+                                    <!--                                    <td><a href="/Company_2/{{this._id}}">{{profile.p_Name}}</a></td>-->
+                                    <td>{{profile.p_Name}}</td>
+                                    <td>{{profile.birth}}</td>
+                                    <td>{{profile.email}}</td>
+                                    <td>{{profile.uni_Year}}</td>
+                                    <td>{{profile.uni_Name}}</td>
+                                    <td>{{profile.uni_Region}}</td>
+                                    <td>{{profile.uni_Major}}</td>
+                                    <td>{{profile.uni_MajorBelong}}</td>
+                                    <td>{{profile.uni_Department}}</td>
+                                    <td>{{profile.uni_BeginDate}}</td>
+                                    <td>{{profile.uni_HowBegin}}</td>
+                                    <td>{{profile.uni_EndDate}}</td>
+                                    <td>{{profile.uni_HowEnd}}</td>
+                                    <td>{{profile.uni_GraduNumber}}</td>
+                                    <td>{{profile.uni_DaynNight}}</td>
+                                    <td>{{profile.uni_Grade}}</td>
+                                    <td>{{profile.uni_Total}}</td>
+                                    <td>{{profile.uni_GradeNumber}}</td>
+                                    <td><button id="btn-remove" class="close" style="float: left;">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button></td>
+                                </tr>
+                            {{/with}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 class="mb-3">인증 여부</h3>
                     <br>
-                    <button id="btn-submit1" class="btn btn-info"><a href="/Uni"> 승인 </a></button>
-                    <button id="btn-submit2" class="btn btn-info"><a href="/Uni"> 알 수 없음 </a></button>
-                    <button id="btn-submit3" class="btn btn-info"><a href="/Uni"> 거절 </a></button>
-
-    </div>
-    {{> ex_footer}}
+                    <button id="btn-submit1" class="btn btn-info" onclick="location.href='/Uni'"> 승인 </button>
+                    <button id="btn-submit2" class="btn btn-info" onclick="location.href='/Uni'"> 알 수 없음 </button>
+                    <button id="btn-submit3" class="btn btn-info" onclick="location.href='/Uni'"> 거절 </button>
+                </main>
+            </div>
+        </div>
+    </id>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </template>
