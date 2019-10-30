@@ -3,7 +3,7 @@
 // // }, 1000);
 
 var Web3=require("web3");
-web3=new Web3(new Web3.providers.HttpProvider("http://localhost:8405"));
+web3=new Web3(new Web3.providers.HttpProvider("http://localhost:405"));
 var lastcareerContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"getEdu","outputs":[{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"aID","type":"address"},{"name":"a","type":"uint8"},{"name":"time","type":"uint256"}],"name":"setAut_Career","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"num","type":"uint128"}],"name":"setCareer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"aID","type":"address"}],"name":"getApplicant","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"uint128"},{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"sendCareer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getInfo","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"submit","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"aID","type":"address"},{"name":"a","type":"uint8"},{"name":"time","type":"uint256"}],"name":"setAut_Edu","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAut_Edu","outputs":[{"name":"","type":"uint8"},{"name":"","type":"string"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"aID","type":"address"}],"name":"getCareerFromA","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"sendEdu","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getCareerRequest","outputs":[{"name":"","type":"address[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getApplyRequest","outputs":[{"name":"","type":"address[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"aID","type":"address"}],"name":"getEduFromA","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getCareer","outputs":[{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAut_Career","outputs":[{"name":"","type":"uint8"},{"name":"","type":"string"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getEduRequest","outputs":[{"name":"","type":"address[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"num","type":"uint128"}],"name":"setEdu","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"uint256"}],"name":"setNum","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"string"},{"name":"b","type":"uint128"},{"name":"c","type":"string"},{"name":"d","type":"string"}],"name":"setInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]);
 
 var last=lastcareerContract.at("0x4194D3eB92305B3C0f7C8c1b03397DcD119F9d69");
@@ -37,30 +37,6 @@ Meteor.methods({
       }
     })
   },
-  // setEdu: function (uni_GraduNumber) {
-  //   //지원자만 - 학력작성(졸업증명서 번호입력)
-  //   last.setEdu.sendTransaction(uni_GraduNumber, {
-  //     from: web3.eth.coinbase,
-  //   }, function (error, transactionHash) {
-  //     if (!error) {
-  //       console.log("Good3 + ", uni_GraduNumber);
-  //     } else {
-  //       console.log("Error3");
-  //     }
-  //   })
-  // },
-  // setCareer: function (com_Number) {
-  //   //지원자만 - 경력작성(경력증명서 번호입력)
-  //   last.setCareer.sendTransaction(com_Number, {
-  //     from: web3.eth.coinbase,
-  //   }, function (error, transactionHash) {
-  //     if (!error) {
-  //       console.log("Good4 + ", com_Number);
-  //     } else {
-  //       console.log("Error4");
-  //     }
-  //   })
-  // },
   getInfo: function () {
     //인적사항 확인
     var a=last.getInfo.call().toString();
@@ -75,32 +51,6 @@ Meteor.methods({
     //지원자만 - 자신의 경력 확인
     var c=last.getCareer.call().toString();
     console.log(c);
-  },
-  sendEdu:function(){
-    //지원자만 - 학력전송
-    last.sendEdu.sendTransaction({
-      from:web3.eth.coinbase,
-    },function(error,transactionHash){
-      if(!error){
-        console.log("Good5 + sendEdu");
-      }
-      else{
-        console.log("Error5");
-      }
-    })
-  },
-  sendCareer:function(){
-    //지원자만 - 경력전송
-    last.sendCareer.sendTransaction({
-      from:web3.eth.coinbase,
-    },function(error,transactionHash){
-      if(!error){
-        console.log("Good6 + sendCareer");
-      }
-      else{
-        console.log("Error6");
-      }
-    })
   },
   //학교만 - 요청받은 학력 확인
   getEduRequest:function(){
@@ -159,19 +109,6 @@ Meteor.methods({
     var i=last.getAut_Career.call();
     console.log(i);
   },
-  //지원자만 - 학력, 경력 인증여부가 okay일 때만 기업에 지원.
-  submit:function(){
-    last.submit.sendTransaction({
-      from:web3.eth.coinbase,
-    },function(error,transactionHash){
-      if(!error){
-        console.log("Good9");
-      }
-      else{
-        console.log("Error9");
-      }
-    })
-  },
   //기업만 - 자신의 기업에 지원한 지원자의 계좌 리스트를 반환.
   getApplyRequest:function(){
     var j=last.getApplyRequest.call();
@@ -225,23 +162,8 @@ Meteor.methods({
           'profile.uni_Journal': eduData.uni_Journal,
           'profile.uni_GraduNumber':uni_GraduNumber
         }
-      })
-   // }else{
-    //  return "권한이 없습니다."
-    //}
-
-    //블록체인
-    // last.setEdu.sendTransaction(uni_GraduNumber, {
-    //   from: web3.eth.coinbase,
-    // }, function (error, transactionHash) {
-    //   if (!error) {
-    //     console.log("Good3 + ", uni_GraduNumber);
-    //   } else {
-    //     console.log("Error3");
-    //   }
-    // })
-    //DB
-
+      }),
+      last.setEdu.sendTransaction(uni_GraduNumber,{from:web3.eth.coinbase});
     return "원서함에 저장되었습니다."
   },
   saveCareer: function (careerData, com_Number) {
@@ -260,28 +182,12 @@ Meteor.methods({
           'profile.com_Region': careerData.com_Region,
           'profile.com_Number': com_Number
         }
-      })
-       return "원서함에 저장되었습니다."
-    // }else{
-    //   return "권한이 없습니다."
-    // }
-
-    // last.setCareer.sendTransaction(com_Number, {
-    //   from: web3.eth.coinbase,
-    // }, function (error, transactionHash) {
-    //   if (!error) {
-    //     console.log("Good4 + ", com_Number);
-    //   } else {
-    //     console.log("Error4");
-    //   }
-    // })
-    // console.log(com_Number);
-
-
+      }),
+      last.setCareer.sendTransaction(com_Number,{from:web3.eth.coinbase});
+    return "원서함에 저장되었습니다."
   },
   saveSpec: function(specData,spec_Number){
     console.log(spec_Number);
-
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
@@ -299,49 +205,64 @@ Meteor.methods({
     return "원서함에 저장되었습니다."
   },
   saveComApply: function(comApply){
-
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
         'profile.comApply': comApply,
         'profile.com_Author':"확인 중"
       }
-    })
-    return "경력 인증 요청이 되었습니다."
+    }),
+    last.sendCareer({from:web3.eth.coinbase});
+  return "경력 인증 요청이 되었습니다."
   },
   saveUniApply: function(uniApply){
-
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
         'profile.uniApply': uniApply,
         'profile.uni_Author':"확인 중"
       }
-    })
-    return "학력 인증 요청이 되었습니다."
+    }),
+    last.sendEdu({from:web3.eth.coinbase});
+  return "학력 인증 요청이 되었습니다."
   },
   saveComAuthor: function(com_Author,_id){
     //var userInfo = Meteor.user();
     //if(userInfo.profile.p_Type === "기업"){
+    if(com_Author==='승인'){
+      num1=0;
+    }
+    else num1=1;
+    //account1='profile.accountKey'.toString();
+    //account1=Meteor.users.find({'_id':_id}).profile.accountKey;
     Meteor.users.update({_id:_id}, {
         $set: {
           'profile.com_Author': com_Author,
           'profile.comApply':false
         }
       })
-      return "경력 인증이 완료되었습니다."
+    //last.setAut_Career(account1,num1,Date.now());
+  return "경력 인증이 완료되었습니다."
     // }else{
     //  return "권한이 없습니다."
     // }
   },
   saveUniAuthor: function(uni_Author,_id){
+    if(uni_Author==='승인'){
+      num2=0;
+    }
+    else num2=1;
+    //account2='profile.accountKey'.toAddress();
+    //var account2=(Meteor.users.findOne({_id:_id}.accountKey)).toAddress();
+    //account2=Meteor.users.findOne({'_id':_id}).profile.accountKey;
     Meteor.users.update({_id:_id}, {
       $set: {
         'profile.uni_Author': uni_Author,
         'profile.uniApply':false
       }
     })
-    return "학력 인증이 완료되었습니다."
+    //last.setAut_Career(account2,num2,Date.now());
+  return "학력 인증이 완료되었습니다."
   },
   saveSubmitAll: function(submitAll,_id){
     var userInfo = Meteor.user();
@@ -350,7 +271,8 @@ Meteor.methods({
         $set: {
           'profile.submitAll': submitAll
         }
-      })
+      }),
+      last.submit({from:web3.eth.coinbase});
       return "이력서 제출이 완료되었습니다."
     } else if(userInfo.profile.com_Author === '확인 중' || userInfo.profile.uni_Author === '확인 중'){
       return "이력서 제출이 불가합니다. 인증 확인중입니다. 승인 후 제출해주세요."
