@@ -7,10 +7,13 @@ FlowRouter.route('/Company_2/:_id', {
 })
 
 Template.Company2_details.helpers({
-    detail2:function(){
+    details2:function(){
         var _id = FlowRouter.getParam('_id');
         console.log(_id);
         return Meteor.users.findOne({_id: _id});
+    },
+    userInfo:function() {
+        return Meteor.users.findOne({_id:Meteor.user()._id});
     }
 
 })
