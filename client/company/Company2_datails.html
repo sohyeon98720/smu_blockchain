@@ -43,43 +43,6 @@
                         {{/with}}
                     </div>
 
-<!--                    <div class="row">-->
-<!--                        <table class="table table-striped">-->
-<!--                            <thead>-->
-<!--                            <tr>-->
-<!--                                <th scope="col">이름</th>-->
-<!--                                <th scope="col">연락처</th>-->
-<!--                                <th scope="col">이메일주소</th>-->
-<!--                                <th scope="col">SNS?개인역량</th>-->
-<!--                                <th scope="col">대학명</th>-->
-<!--                                <th scope="col">전공계열</th>-->
-<!--                                <th scope="col">학과</th>-->
-<!--                                <th scope="col">회사명</th>-->
-<!--                                <th scope="col">부서</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            {{#with detail2}}-->
-<!--                                <tr>-->
-<!--                                    &lt;!&ndash;                            <td scope="row">{{profile.p_Name}}</td>&ndash;&gt;-->
-<!--                                    &lt;!&ndash;                                    <td><a href="/Company_2/{{this._id}}">{{profile.p_Name}}</a></td>&ndash;&gt;-->
-<!--                                    <td>{{profile.p_Name}}</td>-->
-<!--                                    <td>{{profile.phoneNumber}}</td>-->
-<!--                                    <td>{{profile.email}}</td>-->
-<!--                                    <td><p> Instagram <a href="https://www.instagram.com/{{profile.spec_Instagram}}">@{{profile.spec_Instagram}}</a></p></td>-->
-<!--                                    <td>{{profile.uni_Name}}</td>-->
-<!--                                    <td>{{profile.uni_MajorBelong}}</td>-->
-<!--                                    <td>{{profile.uni_Department}}</td>-->
-<!--                                    <td>{{profile.com_Name}}</td>-->
-<!--                                    <td>{{profile.com_Field}}</td>-->
-<!--                                    <td><button id="btn-remove" class="close" style="float: left;">-->
-<!--                                        <span aria-hidden="true">&times;</span>-->
-<!--                                    </button></td>-->
-<!--                                </tr>-->
-<!--                            {{/with}}-->
-<!--                            </tbody>-->
-<!--                        </table>-->
-<!--                    </div>-->
                     <div class="col-md-4">
                         <div class="mb-4 shadow">
                             <div class="card-body">
@@ -96,8 +59,6 @@
                                     <div>이메일주소 : {{profile.email}}</div>
                                 {{/with}}
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -145,9 +106,7 @@
                                     <div>퇴사날짜 : {{profile.com_EndDate}}</div>
                                     <div >퇴사 : {{profile.com_HowEnd}}</div>
                                     <div>발급번호 : {{profile.com_Number}}</div>
-
                                     <div >파일첨부 : {{profile.com_File}}</div>
-
                                     <div >퇴사사유 : {{profile.com_EndReason}}</div>
                                     <div>직급 : {{profile.com_Position}}</div>
                                     <div >부서 : {{profile.com_Field}}</div>
@@ -157,34 +116,29 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4">
                         <div class="mb-4 shadow">
                             <div class="card-body">
                                 <p class="card-text">
                                 <h2 class="display-5">지원자 개인 역량</h2>
                                 <hr width = "100%" color = "black">
-
                                 {{#with userInfo}}
                                     <div >항목선택 : {{profile.spec_What}}</div>
                                     <div >자격증명 : {{profile.spec_Name}}</div>
                                     <div>발행처 : {{profile.spec_Organization}}</div>
                                     <div >자격증발급 번호 : {{profile.spec_Number}}</div>
                                     <div>취득일 : {{profile.spec_GetDate}}</div>
-<!--                                    <div>facebook: {{profile.spec_Facebook}}</div>-->
-                                    <div><p> facebook: <a href="https://www.facebook.com/{{profile.spec_Facebook}}">@{{profile.spec_Instagram}}</a></p></div>
-                                    <div><p> Instagram: <a href="https://www.instagram.com/{{profile.spec_Instagram}}">@{{profile.spec_Instagram}}</a></p></div>
-<!--                                    <div>instagram : {{profile.spec_Instagram}}</div>-->
-                                    <div><p> 네이버 카페: <a href="https://cafe.naver.com/{{profile.spec_Cafe}}">@{{profile.spec_Instagram}}</a></p></div>
-                                    <div><p> 네이버 블로그: <a href="https://blog.naver.com/{{profile.spec_Blog}}">@{{profile.spec_Instagram}}</a></p></div>
-<!--                                    <div>네이버 카페 : {{profile.spec_Cafe}}</div>-->
-<!--                                    <div>네이버 블로그 : {{profile.spec_Blog}}</div>-->
+                                    <div> facebook: <a href="https://www.facebook.com/{{profile.spec_Facebook}}">@{{profile.spec_Facebook}}</a></div>
+                                    <div> Instagram: <a href="https://www.instagram.com/{{profile.spec_Instagram}}">@{{profile.spec_Instagram}}</a></div>
+                                    <div> 네이버 카페: <a href="https://cafe.naver.com/{{profile.spec_Cafe}}">@{{profile.spec_Cafe}}</a></div>
+                                    <div> 네이버 블로그: <a href="https://blog.naver.com/{{profile.spec_Blog}}">@{{profile.spec_Blog}}</a></div>
                                 {{/with}}
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4">
                         <div class="mb-4 shadow">
                             <div class="card-body">
