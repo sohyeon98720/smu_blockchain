@@ -31,7 +31,7 @@ Template.ex_upload.helpers({
     },
     link: function() {
         // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
-        return Codeasy.utils.getFileLink(this.file._id)
+        return Codeasy.utils.getFileLink(this._id)
     }
 })
 
@@ -71,6 +71,7 @@ Template.ex_upload.events({
             location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
         }, 1000);
     },
+
     'click #btn-remove': function() {
         DB_CONTENTS.remove({_id: this._id});  //선택 컨텐츠를 DB에서 삭제
     },

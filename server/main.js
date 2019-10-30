@@ -221,7 +221,7 @@ Meteor.methods({
           'profile.uni_Grade': eduData.uni_Grade,
           'profile.uni_Total': eduData.uni_Total,
           'profile.uni_GradeNumber': eduData.uni_GradeNumber,
-          'profile.uni_File': eduData.uni_File,
+          'profile.uni_file': eduData.uni_file,  //파일의 id
           'profile.uni_Journal': eduData.uni_Journal,
           'profile.uni_GraduNumber':uni_GraduNumber
         }

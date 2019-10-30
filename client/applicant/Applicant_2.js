@@ -37,17 +37,24 @@ Template.Applicant_2.onRendered(function() {
 Template.Applicant_2.events({
   'click #btn-submit': function (evt) {
 
-    //var file = $('#inp-file').prop('files')[0];   //화면에서 선택 된 파일 가져오기
-    // var db_file = Meteor.users.insert({   //파일 DB에 미리 저장
-    //   file: file
-    // });
+    var file = $('#inp-file').prop('files')[0];   //화면에서 선택 된 파일 가져오기
+    var db_file = DB_FILES.insert({   //파일 DB에 미리 저장
+      file: file
+
+    });
 
     // Meteor.users.insert({    //컨텐츠 DB에 저장
-    //   file: {
-    //     _id: Meteor.users.config.fileId,     //위 저장 된 파일 _id
-    //     name: Meteor.users.config.file.name  //위 저장 저장 파일명
+    //   // createdAt: new Date(),          //저장 시각
+    //   // content: $('#ta-article').val(),//저장 컨텐츠
+    //     file: {
+    //     _id: db_file.config.fileId,     //위 저장 된 파일 _id
+    //     name: db_file.config.file.name  //위 저장 저장 파일명
     //   }
     // });
+
+    Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
+      location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
+    }, 1000);
 
     Meteor.setTimeout(function () {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
       location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
@@ -70,7 +77,7 @@ Template.Applicant_2.events({
     var uni_Grade = $('#uni_Grade').val();
     var uni_Total = $('#uni_Total').val();
     var uni_GradeNumber = $('#uni_GradeNumber').val();
-    var uni_File =  $('#inp-file').prop('files')[0];
+    var uni_file =  $('#inp-file').val();
     var uni_Journal = $('#uni_Journal').val();
 
     var eduData = {
@@ -88,7 +95,7 @@ Template.Applicant_2.events({
       uni_Grade: uni_Grade,
       uni_Total: uni_Total,
       uni_GradeNumber: uni_GradeNumber,
-      //uni_File: uni_File,
+      uni_file: db_file.config.fileId,  //파일의 id
       uni_Journal: uni_Journal
     }
     console.log(eduData);
@@ -109,6 +116,12 @@ Template.Applicant_2.events({
     //     alert(result);
     //   }
     // })
+  },
+
+  'change #inp-file': function(evt, inst) {
+    //inp-file에서 파일을 선택 시 파일명 시각화
+    var file = $('#inp-file').prop('files')[0];
+    $('#lb-file').text(file.name);
   }
 });
 
