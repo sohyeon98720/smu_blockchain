@@ -38,39 +38,37 @@
         <!-- 정보입력 -->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">지원자 보기</h1>
+            <h1 class="h2">입사 지원자 보기</h1>
 
-            <!-- <div class="btn-toolbar mb-2 mb-md-0"> -->
-              <!-- <div class="btn-group mr-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Button1</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Button2</button>
-              </div>
-              <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-              </button>
-            </div> -->
-
-          <!-- </div> -->
           </div>
               <div class="row">
                   <table class="table table-striped">
-
                       <thead>
                       <tr>
                           <th scope="col">이름</th>
-                          <th scope="col">생년월일</th>
+                          <th scope="col">연락처</th>
                           <th scope="col">이메일주소</th>
-
+                          <th scope="col">SNS?개인역량</th>
+                          <th scope="col">대학명</th>
+                          <th scope="col">전공계열</th>
+                          <th scope="col">학과</th>
+                          <th scope="col">회사명</th>
+                          <th scope="col">부서</th>
                       </tr>
                       </thead>
                       <tbody>
                       {{#each data2}}
                           <tr>
                               <!--                            <td scope="row">{{profile.p_Name}}</td>-->
-                              <td><a href="/Company_2/{{this._id}}">{{profile.p_Name}}</a></td>
-                              <td>{{profile.birth}}</td>
+                              <td>{{profile.p_Name}}</td>
+                              <td>{{profile.phoneNumber}}</td>
                               <td>{{profile.email}}</td>
+                              <td><p> Instagram <a href="https://www.instagram.com/{{profile.spec_Instagram}}">@{{profile.spec_Instagram}}</a></p></td>
+                              <td>{{profile.uni_Name}}</td>
+                              <td>{{profile.uni_MajorBelong}}</td>
+                              <td>{{profile.uni_Department}}</td>
+                              <td>{{profile.com_Name}}</td>
+                              <td>{{profile.com_Field}}</td>
                               <td><button id="btn-remove" class="close" style="float: left;">
                                   <span aria-hidden="true">&times;</span>
                               </button></td>

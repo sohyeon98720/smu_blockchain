@@ -59,7 +59,13 @@
                             <tr>
                                 <th scope="col">이름</th>
                                 <th scope="col">연락처</th>
-                                <th scope="col">주소</th>
+                                <th scope="col">이메일주소</th>
+                                <th scope="col">SNS?개인역량</th>
+                                <th scope="col">대학명</th>
+                                <th scope="col">전공계열</th>
+                                <th scope="col">학과</th>
+                                <th scope="col">회사명</th>
+                                <th scope="col">부서</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -69,7 +75,13 @@
                                     <!--                                    <td><a href="/Company_2/{{this._id}}">{{profile.p_Name}}</a></td>-->
                                     <td>{{profile.p_Name}}</td>
                                     <td>{{profile.phoneNumber}}</td>
-                                    <td>{{profile.homeAdd}}</td>
+                                    <td>{{profile.email}}</td>
+                                    <td><p> Instagram <a href="https://www.instagram.com/{{profile.spec_Instagram}}">@{{profile.spec_Instagram}}</a></p></td>
+                                    <td>{{profile.uni_Name}}</td>
+                                    <td>{{profile.uni_MajorBelong}}</td>
+                                    <td>{{profile.uni_Department}}</td>
+                                    <td>{{profile.com_Name}}</td>
+                                    <td>{{profile.com_Field}}</td>
                                     <td><button id="btn-remove" class="close" style="float: left;">
                                         <span aria-hidden="true">&times;</span>
                                     </button></td>
