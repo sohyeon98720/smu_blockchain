@@ -168,7 +168,6 @@ Meteor.methods({
   },
   saveCareer: function (careerData, com_Number) {
     var userInfo = Meteor.user();
-    // if(userInfo.profile.p_Type === "지원자"){
       Meteor.users.update({_id: userInfo._id}, {
         $set: {
           'profile.com_Name': careerData.com_Name,
@@ -263,7 +262,7 @@ Meteor.methods({
         'profile.uniApply':false
       }
     }),
-    last.setAut_Career(account2,num2,Date.now(),{from:web3.eth.coinbase});
+    last.setAut_Edu(account2,num2,Date.now(),{from:web3.eth.coinbase});
   return "학력 인증이 완료되었습니다."
   },
   saveSubmitAll: function(submitAll,_id){
