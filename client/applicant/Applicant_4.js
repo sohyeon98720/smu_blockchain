@@ -12,13 +12,13 @@ Template.Applicant_4.events({
       file: file
     });
 
-    Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
-      location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
-    }, 1000);
-
-    Meteor.setTimeout(function () {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
-      location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
-    }, 1000);
+    // Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
+    //   location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
+    // }, 1000);
+    //
+    // Meteor.setTimeout(function () {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
+    //   location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
+    // }, 1000);
 
     evt.preventDefault();
     //  alert(11)
