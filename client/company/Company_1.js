@@ -16,18 +16,16 @@ FlowRouter.route('/Company_1', {
 })
 
 
-// Template.Company_1.onRendered(function() {
-//   run = function () {
-//     Meteor.call('getEduRequest',function(err,result){
-//       if(err){
-//         alert(err);
-//       }
-//       else{
-//         Session.set('uni_data',result);
-//       }
-//     })
-//   }
-// });
+Template.Applicant_5.onRendered(function() {
+  run = function () {
+    feather.replace()
+
+  };
+  Meteor.setTimeout(function(){
+    run()
+  }, 1000)
+
+});
 
 
 Template.Company_1.helpers({

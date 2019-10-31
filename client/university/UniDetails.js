@@ -5,6 +5,17 @@ FlowRouter.route('/UniDetails/:_id', {
     }
 })
 
+Template.Applicant_5.onRendered(function() {
+    run = function () {
+        feather.replace()
+
+    };
+    Meteor.setTimeout(function(){
+        run()
+    }, 1000)
+
+});
+
 Template.UniDetails.onCreated(function() {
     // var _id = FlowRouter.getParam('_id')
     // DB_POSTS.update({_id: _id}, {

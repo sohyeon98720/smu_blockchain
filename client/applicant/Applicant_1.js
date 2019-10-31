@@ -4,6 +4,18 @@ FlowRouter.route('/Applicant_1', {
   }
 })
 
+Template.Applicant_5.onRendered(function() {
+  run = function () {
+    feather.replace()
+
+  };
+  Meteor.setTimeout(function(){
+    run()
+  }, 1000)
+
+});
+
+
 Template.Applicant_1.events({
   'click #btn-submit': function(evt) {
     evt.preventDefault();
