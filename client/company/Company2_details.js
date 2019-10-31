@@ -32,20 +32,17 @@ Template.Company2_details.helpers({
 })
 
 Template.Company2_details.events({
-    //경력인증요청 버튼이 눌리면
-    Template.Company2_details.events({
-        'click #btn-delete':function(evt){
-            evt.preventDefault();
-            var _id = FlowRouter.getParam('_id');
-            var submitAll=false;
-            Meteor.call('deleteApplicant',_id,submitAll,function(err,rslt){
-                if(err){
-                    //alert(err)
-                }
-                else{
-                    alert(rslt);
-                }
-            })
-        }
-    })
+    'click #btn-delete':function(evt){
+        evt.preventDefault();
+        var _id = FlowRouter.getParam('_id');
+        var submitAll=false;
+        Meteor.call('deleteApplicant',_id,submitAll,function(err,rslt){
+            if(err){
+                //alert(err)
+            }
+            else{
+                alert(rslt);
+            }
+        })
+    }
 })
