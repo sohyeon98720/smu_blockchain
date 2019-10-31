@@ -43,15 +43,6 @@ Template.Applicant_2.events({
 
     });
 
-    // Meteor.users.insert({    //컨텐츠 DB에 저장
-    //   // createdAt: new Date(),          //저장 시각
-    //   // content: $('#ta-article').val(),//저장 컨텐츠
-    //     file: {
-    //     _id: db_file.config.fileId,     //위 저장 된 파일 _id
-    //     name: db_file.config.file.name  //위 저장 저장 파일명
-    //   }
-    // });
-
     Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
       location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
     }, 1000);
