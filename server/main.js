@@ -265,31 +265,44 @@ Meteor.methods({
     last.setAut_Edu(account2,num2,Date.now(),{from:web3.eth.coinbase});
   return "학력 인증이 완료되었습니다."
   },
-  saveSubmitAll: function(submitAll,_id){
+  saveSubmitAll: function(submitAll,_id) {
     var userInfo = Meteor.user();
-    if(userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author === '승인'){
+    if (userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author === '승인') {
       Meteor.users.update({_id: userInfo._id}, {
         $set: {
           'profile.submitAll': submitAll
         }
       }),
-      last.submit({from:web3.eth.coinbase});
-      return "이력서 제출이 완료되었습니다."
-    } else if(userInfo.profile.com_Author === '확인 중' || userInfo.profile.uni_Author === '확인 중'){
+          last.submit(
+              {
+                from: web3.eth.coinbase,
+              }, function (error, transactionHash) {
+                if (!error) {
+                  return "이력서 제출이 완료되었습니다.+!!!!!!!"
+                } else {
+                  return "오류발생!!!!!";
+                }
+              })
+      //return "이력서 제출이 완료되었습니다."
+    } else if (userInfo.profile.com_Author === '확인 중' || userInfo.profile.uni_Author === '확인 중') {
       return "이력서 제출이 불가합니다. 인증 확인중입니다. 승인 후 제출해주세요."
-    } else if(userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author !== '승인'){
+    } else if (userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author !== '승인') {
       return "이력서 제출이 불가합니다. 학력 확인 부탁드립니다."
-    }else if(userInfo.profile.com_Author !== '승인' && userInfo.profile.uni_Author === '승인') {
+    } else if (userInfo.profile.com_Author !== '승인' && userInfo.profile.uni_Author === '승인') {
       return "이력서 제출이 불가합니다. 경력 확인 부탁드립니다."
-    }else{
+    } else {
       return "이력서 제출이 불가합니다. 학력, 경력 확인 부탁드립니다."
     }
-
+  },
+  deleteApplicant:function(_id,submitAll){
+    Meteor.users.update({_id:_id},{
+      $set: {
+        'profile.submitAll': submitAll
+      }
+    })
+    return "해당 지원자가 삭제되었습니다.";
   }
-
 })
-
-
 
 // import fs from 'fs';
 // var Web3 = require("web3");
