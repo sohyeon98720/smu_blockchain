@@ -6,6 +6,18 @@ FlowRouter.route('/Company_1/:_id', {
     }
 })
 
+
+Template.Company_details.onRendered(function() {
+    run = function () {
+        feather.replace()
+
+    };
+    Meteor.setTimeout(function(){
+        run()
+    }, 1000)
+
+});
+
 Template.Company_details.helpers({
     detail:function(){
     var _id = FlowRouter.getParam('_id');

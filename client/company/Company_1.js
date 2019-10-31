@@ -15,6 +15,16 @@ FlowRouter.route('/Company_1', {
   }
 })
 
+Template.Company_1.onRendered(function() {
+  run = function () {
+    feather.replace()
+
+  };
+  Meteor.setTimeout(function(){
+    run()
+  }, 1000)
+
+});
 
 // Template.Company_1.onRendered(function() {
 //   run = function () {

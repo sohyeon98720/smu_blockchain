@@ -4,6 +4,18 @@ FlowRouter.route('/Company_2', {
   }
 })
 
+
+Template.Company_2.onRendered(function() {
+    run = function () {
+        feather.replace()
+
+    };
+    Meteor.setTimeout(function(){
+        run()
+    }, 1000)
+
+});
+
 Template.Company_2.helpers({
   // data:function(){
   //   return Meteor.users.find({comApply:true}).fetch();
