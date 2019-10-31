@@ -3,36 +3,20 @@ FlowRouter.route('/Applicant_2', {
     BlazeLayout.render('Applicant_2');
   }
 })
-
-Template.Applicant_2.onRendered(function() {
-  run = function () {
-    var uni_GraduNumber=2;
-    Meteor.call('setEdu',uni_GraduNumber,function(err,result){
-      if(err){
-        alert(err);
-      }
-      else {
-        alert(result);
-      }
-    })
-  }
-})
-
-// Template.Applicant_2.helpers({
-//   contents: function() {
-//     //CONTENTS 데이터베이스를 화면에 전달
-//     return Meteor.users.find();
-//   },
-//   createdAt: function() {
-//     //화면에 보이는 날짜 데이터를 정해진 포맷으로 변환하여 전달
-//     return Codeasy.utils.getStringYMDFromDate(this.createdAt);
-//   },
-//   link: function() {
-//     // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
-//     return Codeasy.utils.getFileLink(this.file._id)
+//
+// Template.Applicant_2.onRendered(function() {
+//   run = function () {
+//     var uni_GraduNumber=2;
+//     Meteor.call('setEdu',uni_GraduNumber,function(err,result){
+//       if(err){
+//         alert(err);
+//       }
+//       else {
+//         alert(result);
+//       }
+//     })
 //   }
 // })
-
 
 Template.Applicant_2.events({
   'click #btn-submit': function (evt) {
@@ -43,13 +27,13 @@ Template.Applicant_2.events({
 
     });
 
-    Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
-      location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
-    }, 1000);
-
-    Meteor.setTimeout(function () {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
-      location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
-    }, 1000);
+    // Meteor.setTimeout(function() {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
+    //   location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
+    // }, 1000);
+    //
+    // Meteor.setTimeout(function () {  // DB에 이미지 삽입 후 link에 바로 접근 시 이미지가 브라우저에 나타나지 않음
+    //   location.reload();            // 따라서 삽입 후 해당 link 접근에 가능한 시간 경과 후 화면을 갱신 해주는 과정
+    // }, 1000);
 
     evt.preventDefault();
     //  alert(11)

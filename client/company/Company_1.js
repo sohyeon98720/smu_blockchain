@@ -1,20 +1,20 @@
-FlowRouter.route('/Company_1', {
-  action: function() {
-    BlazeLayout.render('Company_1');
-  }
-})
-
 // FlowRouter.route('/Company_1', {
 //   action: function() {
-//     var userInfo = Meteor.user();
-//     if(userInfo.profile.p_Type === "기업"){
-//       BlazeLayout.render('Company_1');
-//     }else{
-//       alert("권한이 없습니다.")
-//     }
-//
+//     BlazeLayout.render('Company_1');
 //   }
 // })
+
+FlowRouter.route('/Company_1', {
+  action: function() {
+    var userInfo = Meteor.user();
+    if(userInfo.profile.p_Type === "기업"){
+      BlazeLayout.render('Company_1');
+    }else{
+      alert("권한이 없습니다.")
+    }
+
+  }
+})
 
 
 
