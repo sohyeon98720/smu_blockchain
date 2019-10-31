@@ -24,14 +24,12 @@ Template.UniDetails.helpers({
     // },
     student: function() {
         var _id = FlowRouter.getParam('_id')
-        // return Meteor.users.findOne({_id:Meteor.user()._id});
-        // return Meteor.users.find({"profile.uniApply":true});
         return Meteor.users.findOne({_id: _id});
     },
     link: function() {
         // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
-        var userInfo = Meteor.user();
-        return Codeasy.utils.getFileLink(userInfo.profile.uni_file);
+        var _id = FlowRouter.getParam('_id');
+        return Codeasy.utils.getFileLink(Meteor.users.findOne({_id:_id}).profile.uni_file);
     }
 });
 Template.UniDetails.events({
@@ -43,7 +41,7 @@ Template.UniDetails.events({
         var uni_Author="승인";
         Meteor.call('saveUniAuthor',uni_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+                //alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
@@ -55,7 +53,7 @@ Template.UniDetails.events({
         var uni_Author="알 수 없음";
         Meteor.call('saveUniAuthor',uni_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+               // alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
@@ -67,7 +65,7 @@ Template.UniDetails.events({
         var uni_Author="거절";
         Meteor.call('saveUniAuthor',uni_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+               // alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }

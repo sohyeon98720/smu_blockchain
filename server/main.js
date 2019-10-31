@@ -274,18 +274,17 @@ Meteor.methods({
           'profile.submitAll': submitAll
         }
       }),
-      last.submit({from:web3.eth.coinbase});
-          // last.submit(
-          //     {
-          //       from: web3.eth.coinbase,
-          //     }, function (error, transactionHash) {
-          //       if (!error) {
-          //         return "이력서 제출이 완료되었습니다.+!!!!!!!"
-          //       } else {
-          //         return "오류발생!!!!!";
-          //       }
-          //     })
-      return "이력서 제출이 완료되었습니다."
+          last.submit(
+              {
+                from: web3.eth.coinbase,
+              }, function (error, transactionHash) {
+                if (!error) {
+                  return "이력서 제출이 완료되었습니다.+!!!!!!!"
+                } else {
+                  return "오류발생!!!!!";
+                }
+              })
+      //return "이력서 제출이 완료되었습니다."
     } else if (userInfo.profile.com_Author === '확인 중' || userInfo.profile.uni_Author === '확인 중') {
       return "이력서 제출이 불가합니다. 인증 확인중입니다. 승인 후 제출해주세요."
     } else if (userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author !== '승인') {

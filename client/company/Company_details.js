@@ -14,8 +14,9 @@ Template.Company_details.helpers({
     },
     link2: function() {
         // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
-        var userInfo = Meteor.user();
-        return Codeasy.utils.getFileLink(userInfo.profile.com_File);
+        var _id = FlowRouter.getParam('_id');
+        return Codeasy.utils.getFileLink(Meteor.users.findOne({_id:_id}).profile.com_File);
+
     }
 
 })
@@ -25,14 +26,16 @@ Template.Company_details.events({
     'click #btn-submit1': function(evt) {
         evt.preventDefault();
         var _id = FlowRouter.getParam('_id');
+        var account1= Meteor.users.findOne({_id:_id}).profile.accountKey;
         var com_Author="승인";
         Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+               lert(err)
             }else{
-                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
+               alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
         });
+
     },
     'click #btn-submit2': function(evt) {
         evt.preventDefault();

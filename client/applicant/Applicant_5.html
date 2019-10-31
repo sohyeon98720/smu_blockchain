@@ -117,24 +117,17 @@
                     <div class="col-md-4">
                         <div class="mb-4 shadow">
                             <div class="card-body">
-                            <p class="card-text">
-                                <h2 class="display-5">개인 역량</h2>
+                                <p class="card-text">
+                                <h2 class="display-5">인증 여부</h2>
                                 <hr width = "100%" color = "black">
-
                                 {{#with userInfo}}
-                                    <div >항목선택 : {{profile.spec_What}}</div>
-                                    <div >자격증명 : {{profile.spec_Name}}</div>
-                                    <div>발행처 : {{profile.spec_Organization}}</div>
-                                    <div >자격증발급 번호 : {{profile.spec_Number}}</div>
-                                    <div>취득일 : {{profile.spec_GetDate}}</div>
-                                    <div>페이스북 : {{profile.spec_Facebook}}</div>
-                                    <div>인스타그램 : {{profile.spec_Instagram}}</div>
-                                    <div>네이버 카페 : {{profile.spec_Cafe}}</div>
-                                    <div>네이버 블로그 : {{profile.spec_Blog}}</div>
-                                    <div>자격증 증명서: </div>
-                                    <img src="{{link3}}" alt="자격증인증" class="card-img-top" height="300px" width="100px">
+                                    <div >학력 인증 여부 : {{profile.uni_Author}}</div>
+                                    <div >경력 인증 여부 : {{profile.com_Author}}</div>
                                 {{/with}}
                                 </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button id="btn-submit3" class="btn btn-info">이력서 제출</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -206,17 +199,25 @@
                     <div class="col-md-4">
                         <div class="mb-4 shadow">
                             <div class="card-body">
-                            <p class="card-text">
-                                <h2 class="display-5">인증 여부</h2>
+                                <p class="card-text">
+                                <h2 class="display-5">개인 역량</h2>
                                 <hr width = "100%" color = "black">
+
+
                                 {{#with userInfo}}
-                                    <div >학력 인증 여부 : {{profile.uni_Author}}</div>
-                                    <div >경력 인증 여부 : {{profile.com_Author}}</div>
+                                    <div >항목선택 : {{profile.spec_What}}</div>
+                                    <div >자격증명 : {{profile.spec_Name}}</div>
+                                    <div>발행처 : {{profile.spec_Organization}}</div>
+                                    <div >자격증발급 번호 : {{profile.spec_Number}}</div>
+                                    <div>취득일 : {{profile.spec_GetDate}}</div>
+                                    <div>페이스북 : {{profile.spec_Facebook}}</div>
+                                    <div>인스타그램 : {{profile.spec_Instagram}}</div>
+                                    <div>네이버 카페 : {{profile.spec_Cafe}}</div>
+                                    <div>네이버 블로그 : {{profile.spec_Blog}}</div>
+                                    <div>자격증 증명서: </div>
+                                    <img src="{{link3}}" alt="학력인증" class="card-img-top" height="300px" width="100px">
                                 {{/with}}
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <button id="btn-submit3" class="btn btn-info">이력서 제출</button>
-                                </div>
                             </div>
                         </div>
                     </div>

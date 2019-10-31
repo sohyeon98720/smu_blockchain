@@ -7,72 +7,34 @@ FlowRouter.route('/Company_2/:_id', {
 })
 
 Template.Company2_details.helpers({
-    details2:function(){
-        var _id = FlowRouter.getParam('_id');
-        console.log(_id);
-        return Meteor.users.findOne({_id: _id});
-    },
+
     userInfo:function() {
-        return Meteor.users.findOne({_id:Meteor.user()._id});
+        var _id = FlowRouter.getParam('_id');
+        return Meteor.users.findOne({_id:_id});
+        //return Meteor.users.findOne({_id:_id});
     },
     link: function() {
         // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
-        var userInfo = Meteor.user();
-        return Codeasy.utils.getFileLink(userInfo.profile.uni_file);
+        var _id = FlowRouter.getParam('_id');
+        return Codeasy.utils.getFileLink(Meteor.users.findOne({_id:_id}).profile.uni_file);
     },
     link2: function() {
         // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
-        var userInfo = Meteor.user();
-        return Codeasy.utils.getFileLink(userInfo.profile.com_File);
+        var _id = FlowRouter.getParam('_id');
+        return Codeasy.utils.getFileLink(Meteor.users.findOne({_id:_id}).profile.com_File);
+
     }
 
 })
 
 Template.Company2_details.events({
-    //경력인증요청 버튼이 눌리면
-    'click #btn-submit1': function(evt) {
-        evt.preventDefault();
-        var _id = FlowRouter.getParam('_id');
-        var com_Author="승인";
-        Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
-            if(err){
-                alert(err)
-            }else{
-                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
-            }
-        });
-    },
-    'click #btn-submit2': function(evt) {
-        evt.preventDefault();
-        var _id = FlowRouter.getParam('_id');
-        var com_Author="알 수 없음";
-        Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
-            if(err){
-                alert(err)
-            }else{
-                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
-            }
-        });
-    },
-    'click #btn-submit3': function(evt) {
-        evt.preventDefault();
-        var _id = FlowRouter.getParam('_id');
-        var com_Author="거절";
-        Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
-            if(err){
-                alert(err)
-            }else{
-                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
-            }
-        });
-    },
     'click #btn-delete':function(evt){
         evt.preventDefault();
         var _id = FlowRouter.getParam('_id');
         var submitAll=false;
         Meteor.call('deleteApplicant',_id,submitAll,function(err,rslt){
             if(err){
-                alert(err)
+                //alert(err)
             }
             else{
                 alert(rslt);
