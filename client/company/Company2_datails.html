@@ -76,6 +76,8 @@
                                       <div>발행처 : {{profile.spec_Organization}}</div>
                                       <div >자격증발급 번호 : {{profile.spec_Number}}</div>
                                       <div>취득일 : {{profile.spec_GetDate}}</div>
+                                      <div>자격증명서: </div>
+                                      <img src="{{link3}}" alt="" class="card-img-top" height="300px" width="100px">
                                   {{/with}}
                                   </p>
                               </div>
@@ -171,7 +173,7 @@
 <!--                            </div>-->
                         </div>
                     </div>
-                    <button id="btn-delete" class="btn btn-info">지원자의 정보를 모두 확인했습니다.</button>
+                    <button id="btn-delete" class="btn btn-info" onclick="location.href='/Company_2'">지원자의 정보를 모두 확인했습니다.</button>
                 </main>
             </div>
         </div>

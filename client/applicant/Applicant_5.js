@@ -51,7 +51,7 @@ Template.Applicant_5.events({
     var comApply=true;
     Meteor.call('saveComApply',comApply,function (err,rslt) {
       if(err){
-        alert(err)
+        //alert(err)
       }else{
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
@@ -63,7 +63,7 @@ Template.Applicant_5.events({
     var uniApply=true;
     Meteor.call('saveUniApply',uniApply,function (err,rslt) {
       if(err){
-        alert(err)
+        //alert(err)
       }else{
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
@@ -75,7 +75,7 @@ Template.Applicant_5.events({
     var submitAll=true;
     Meteor.call('saveSubmitAll',submitAll,function (err,rslt) {
       if(err){
-        alert(err)
+        //alert(err)
       }else{
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }

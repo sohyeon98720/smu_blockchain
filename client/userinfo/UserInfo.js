@@ -25,7 +25,7 @@ Template.UserInfo.events({
   //   alert('success');
   //  2. 서버에 전달해서 작업하기
     Meteor.call('saveResume', firstName, credit, function() {
-      alert(1111111); //서버 수행 이후 클라이언트에서 실행 될 코드.
+      alert("저장되었습니다."); //서버 수행 이후 클라이언트에서 실행 될 코드.
     });
 
 

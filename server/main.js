@@ -292,7 +292,7 @@ Meteor.methods({
         'profile.submitAll': submitAll
       }
     })
-    return "해당 지원자가 삭제되었습니다.";
+    return "해당 지원의 정보를 열람완료 하였습니다.";
   }
 })
 

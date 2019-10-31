@@ -30,12 +30,11 @@ Template.Company_details.events({
         var com_Author="승인";
         Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
-               lert(err)
+               //alert(err)
             }else{
                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
         });
-
     },
     'click #btn-submit2': function(evt) {
         evt.preventDefault();
@@ -43,7 +42,7 @@ Template.Company_details.events({
         var com_Author="알 수 없음";
         Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+                //alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
@@ -55,7 +54,7 @@ Template.Company_details.events({
         var com_Author="거절";
         Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+                //alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }

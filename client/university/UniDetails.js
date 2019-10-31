@@ -41,7 +41,7 @@ Template.UniDetails.events({
         var uni_Author="승인";
         Meteor.call('saveUniAuthor',uni_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+                //alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
@@ -53,7 +53,7 @@ Template.UniDetails.events({
         var uni_Author="알 수 없음";
         Meteor.call('saveUniAuthor',uni_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+               // alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
@@ -65,7 +65,7 @@ Template.UniDetails.events({
         var uni_Author="거절";
         Meteor.call('saveUniAuthor',uni_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+               // alert(err)
             }else{
                 alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
