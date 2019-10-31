@@ -87,7 +87,7 @@ Meteor.methods({
     })
   },
   //기업만 - 요청 리스트 중 하나의 인증상태를 설정해줌. address, 인증여부(숫자),날짜(숫자)넣어야함
-  setAut_Career:function(applicant_Addr, com_Author, com_Time){
+  setAut_Career:function(applicant_Addr,com_Author, com_Time){
     last.setAut_Career.sendTransaction(applicant_Addr, com_Author, com_Time,{
       from:web3.eth.coinbase,
     },function(error,transactionHash){
@@ -136,7 +136,6 @@ Meteor.methods({
         'profile.birth': infoData.birth
       }
     })
-    //last.setInfo.sendTransaction(uni_GraduNumber,{from:web3.eth.coinbase});
     return "원서함에 저장되었습니다."
   },
 
@@ -235,18 +234,19 @@ Meteor.methods({
     //var userInfo = Meteor.user();
     //if(userInfo.profile.p_Type === "기업"){
     if(com_Author==='승인'){
-      num1=0;
+      var num1=0;
     }
-    else num1=1;
+    else var num1=1;
     //account1='profile.accountKey'.toString();
     //account1=Meteor.users.find({'_id':_id}).profile.accountKey;
+    var account1= Meteor.users.findOne({_id:_id}).profile.accountKey;
     Meteor.users.update({_id:_id}, {
         $set: {
           'profile.com_Author': com_Author,
           'profile.comApply':false
         }
       })
-    //last.setAut_Career(account1,num1,Date.now());
+    last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
   return "경력 인증이 완료되었습니다."
     // }else{
     //  return "권한이 없습니다."
