@@ -17,8 +17,6 @@ FlowRouter.route('/Company_1', {
 // })
 
 
-
-
 // Template.Company_1.onRendered(function() {
 //   run = function () {
 //     Meteor.call('getEduRequest',function(err,result){
