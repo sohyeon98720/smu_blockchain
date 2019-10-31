@@ -34,7 +34,7 @@ Template.Company2_details.events({
         var submitAll=false;
         Meteor.call('deleteApplicant',_id,submitAll,function(err,rslt){
             if(err){
-                alert(err)
+                //alert(err)
             }
             else{
                 alert(rslt);
