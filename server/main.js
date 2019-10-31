@@ -92,7 +92,8 @@ Meteor.methods({
       from:web3.eth.coinbase,
     },function(error,transactionHash){
       if(!error){
-        console.log("Good8");
+        //console.log("Good8");
+        return "경력 인증 완료"
       }
       else{
         console.log("Error8");
@@ -244,9 +245,10 @@ Meteor.methods({
         }
       })
 
-    last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
+    //last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
+    Meteor.setAut_Career(account1,num1,Date.now());
 
-  return "경력 인증이 완료되었습니다."
+  //return "경력 인증이 완료되었습니다."
   },
   saveUniAuthor: function(uni_Author,_id){
     if(uni_Author==='승인'){
