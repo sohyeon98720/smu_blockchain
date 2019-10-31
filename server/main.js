@@ -123,9 +123,8 @@ Meteor.methods({
 
   //DB 저장
   saveInfo: function(infoData){
-    // DB_RESUME.insert(infoData);
+
     var userInfo = Meteor.user();
-    //console.log(userInfo)
 
     Meteor.users.update({_id: userInfo._id}, {
       $set: {
@@ -141,7 +140,6 @@ Meteor.methods({
 
   saveEdu: function (eduData, uni_GraduNumber) {
     var userInfo = Meteor.user();
-   // if(userInfo.profile.p_Type === "지원자"){
       Meteor.users.update({_id: userInfo._id}, {
         $set: {
           'profile.uni_Year': eduData.uni_Year,
@@ -231,8 +229,6 @@ Meteor.methods({
   },
 
   saveComAuthor: function(com_Author,_id){
-    //var userInfo = Meteor.user();
-    //if(userInfo.profile.p_Type === "기업"){
     if(com_Author==='승인'){
       var num1=1;
     }
@@ -246,11 +242,10 @@ Meteor.methods({
           'profile.comApply':false
         }
       })
+
     last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
+
   return "경력 인증이 완료되었습니다."
-    // }else{
-    //  return "권한이 없습니다."
-    // }
   },
   saveUniAuthor: function(uni_Author,_id){
     if(uni_Author==='승인'){
