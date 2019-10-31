@@ -77,7 +77,7 @@ Template.Applicant_2.events({
     var uni_Grade = $('#uni_Grade').val();
     var uni_Total = $('#uni_Total').val();
     var uni_GradeNumber = $('#uni_GradeNumber').val();
-    var uni_file =  $('#inp-file').val();
+    var uni_file =  db_file.config.fileId;
     var uni_Journal = $('#uni_Journal').val();
     //var uniApply=false;
 
@@ -96,7 +96,7 @@ Template.Applicant_2.events({
       uni_Grade: uni_Grade,
       uni_Total: uni_Total,
       uni_GradeNumber: uni_GradeNumber,
-      uni_file: db_file.config.fileId,  //파일의 id
+      uni_file:uni_file,  //파일의 id
       uni_Journal: uni_Journal
     }
     console.log(eduData);
