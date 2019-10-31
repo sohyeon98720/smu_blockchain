@@ -3,7 +3,7 @@
 // // }, 1000);
 
 var Web3=require("web3");
-web3=new Web3(new Web3.providers.HttpProvider("http://localhost:8405"));
+web3=new Web3(new Web3.providers.HttpProvider("http://localhost:405"));
 var lastcareerContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"getEdu","outputs":[{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"aID","type":"address"},{"name":"a","type":"uint8"},{"name":"time","type":"uint256"}],"name":"setAut_Career","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"num","type":"uint128"}],"name":"setCareer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"aID","type":"address"}],"name":"getApplicant","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"uint128"},{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"sendCareer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getInfo","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"submit","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"aID","type":"address"},{"name":"a","type":"uint8"},{"name":"time","type":"uint256"}],"name":"setAut_Edu","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAut_Edu","outputs":[{"name":"","type":"uint8"},{"name":"","type":"string"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"aID","type":"address"}],"name":"getCareerFromA","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"sendEdu","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getCareerRequest","outputs":[{"name":"","type":"address[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getApplyRequest","outputs":[{"name":"","type":"address[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"aID","type":"address"}],"name":"getEduFromA","outputs":[{"name":"","type":"string"},{"name":"","type":"uint128"},{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getCareer","outputs":[{"name":"","type":"uint128"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAut_Career","outputs":[{"name":"","type":"uint8"},{"name":"","type":"string"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getEduRequest","outputs":[{"name":"","type":"address[10]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"num","type":"uint128"}],"name":"setEdu","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"uint256"}],"name":"setNum","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"a","type":"string"},{"name":"b","type":"uint128"},{"name":"c","type":"string"},{"name":"d","type":"string"}],"name":"setInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]);
 
 var last=lastcareerContract.at("0x4194D3eB92305B3C0f7C8c1b03397DcD119F9d69");
@@ -274,17 +274,18 @@ Meteor.methods({
           'profile.submitAll': submitAll
         }
       }),
-          last.submit(
-              {
-                from: web3.eth.coinbase,
-              }, function (error, transactionHash) {
-                if (!error) {
-                  return "이력서 제출이 완료되었습니다.+!!!!!!!"
-                } else {
-                  return "오류발생!!!!!";
-                }
-              })
-      //return "이력서 제출이 완료되었습니다."
+      last.submit({from:web3.eth.coinbase});
+          // last.submit(
+          //     {
+          //       from: web3.eth.coinbase,
+          //     }, function (error, transactionHash) {
+          //       if (!error) {
+          //         return "이력서 제출이 완료되었습니다.+!!!!!!!"
+          //       } else {
+          //         return "오류발생!!!!!";
+          //       }
+          //     })
+      return "이력서 제출이 완료되었습니다."
     } else if (userInfo.profile.com_Author === '확인 중' || userInfo.profile.uni_Author === '확인 중') {
       return "이력서 제출이 불가합니다. 인증 확인중입니다. 승인 후 제출해주세요."
     } else if (userInfo.profile.com_Author === '승인' && userInfo.profile.uni_Author !== '승인') {
