@@ -161,10 +161,11 @@ Meteor.methods({
           'profile.uni_file': eduData.uni_file,  //파일의 id
           'profile.uni_Journal': eduData.uni_Journal,
           'profile.uni_GraduNumber':uni_GraduNumber,
-          'profile.uniApply':false
+          'profile.uniApply':false,
+          'profile.uni_Author':'-'
         }
-      })
-      //last.setEdu.sendTransaction(uni_GraduNumber,{from:web3.eth.coinbase});
+      }),
+      last.setEdu.sendTransaction(uni_GraduNumber,{from:web3.eth.coinbase});
     return "원서함에 저장되었습니다."
   },
   saveCareer: function (careerData, com_Number) {
@@ -182,10 +183,11 @@ Meteor.methods({
           'profile.com_Field': careerData.com_Field,
           'profile.com_Region': careerData.com_Region,
           'profile.com_Number': com_Number,
-          'profile.comApply':false
+          'profile.comApply':false,
+          'profile.com_Author':'-'
         }
-      })
-          //last.setCareer.sendTransaction(com_Number,{from:web3.eth.coinbase});
+      }),
+      last.setCareer.sendTransaction(com_Number,{from:web3.eth.coinbase});
     return "원서함에 저장되었습니다."
   },
   saveSpec: function(specData,spec_Number){
@@ -213,8 +215,8 @@ Meteor.methods({
         'profile.comApply': comApply,
         'profile.com_Author':"확인 중"
       }
-    })
-    //last.sendCareer({from:web3.eth.coinbase});
+    }),
+    last.sendCareer({from:web3.eth.coinbase});
   return "경력 인증 요청이 되었습니다."
   },
 
@@ -225,8 +227,8 @@ Meteor.methods({
         'profile.uniApply': uniApply,
         'profile.uni_Author':"확인 중"
       }
-    })
-    //last.sendEdu({from:web3.eth.coinbase});
+    }),
+    last.sendEdu({from:web3.eth.coinbase});
   return "학력 인증 요청이 되었습니다."
   },
 
@@ -239,14 +241,15 @@ Meteor.methods({
     else num1=1;
     //account1='profile.accountKey'.toString();
     //account1=Meteor.users.find({'_id':_id}).profile.accountKey;
+    var account1= Meteor.users.findOne({_id:_id}).profile.accountKey;
     Meteor.users.update({_id:_id}, {
         $set: {
           'profile.com_Author': com_Author,
           'profile.comApply':false
         }
-      })
-    //last.setAut_Career(account1,num1,Date.now());
-  return "경력 인증이 완료되었습니다."
+      }),
+      last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
+    return "경력 인증이 완료되었습니다."
     // }else{
     //  return "권한이 없습니다."
     // }
@@ -259,13 +262,14 @@ Meteor.methods({
     //account2='profile.accountKey'.toAddress();
     //var account2=(Meteor.users.findOne({_id:_id}.accountKey)).toAddress();
     //account2=Meteor.users.findOne({'_id':_id}).profile.accountKey;
+    var account2= Meteor.users.findOne({_id:_id}).profile.accountKey;
     Meteor.users.update({_id:_id}, {
       $set: {
         'profile.uni_Author': uni_Author,
         'profile.uniApply':false
       }
-    })
-    //last.setAut_Career(account2,num2,Date.now());
+    }),
+    last.setAut_Career(account2,num2,Date.now(),{from:web3.eth.coinbase});
   return "학력 인증이 완료되었습니다."
   },
   saveSubmitAll: function(submitAll,_id){
