@@ -3,15 +3,18 @@ FlowRouter.route('/Uni', {
     BlazeLayout.render('Uni');
   }
 })
-// Template.Uni.onRendered(function() {
-//   run = function () {
-//     feather.replace()
-//
-//   };
-//   Meteor.setTimeout(function(){
-//     run()
-//   }, 1000)
-// });
+
+
+// FlowRouter.route('/Uni', {
+//   action: function() {
+//     var userInfo = Meteor.user();
+//     if(userInfo.profile.p_Type === "학교"){
+//       BlazeLayout.render('Uni');
+//     }else{
+//       alert("권한이 없습니다.")
+//     }
+//   }
+// })
 
 Template.Uni.helpers({
   students: function() {
