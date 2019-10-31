@@ -65,9 +65,6 @@
                                     <td>{{profile.uni_Major}}</td>
                                     <td>{{profile.uni_MajorBelong}}</td>
                                     <td>{{profile.uni_Department}}</td>
-                                    <td><button id="btn-remove" class="close" style="float: left;">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button></td>
                                 </tr>
                             {{/with}}
                             </tbody>
@@ -105,18 +102,28 @@
                                     <td>{{profile.uni_Grade}}</td>
                                     <td>{{profile.uni_Total}}</td>
                                     <td>{{profile.uni_GradeNumber}}</td>
-                                    <td>{{profile.uni_file}}</td>
-                                    <td><button id="btn-remove" class="close" style="float: left;">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button></td>
                                 </tr>
                             {{/with}}
                             </tbody>
                         </table>
                     </div>
                     <br><br>
+                    <div class="col-md-4">
+                        <div class="mb-4 shadow">
+                            <div class="card-body">
+                                <p class="card-text">
+                                <h2 class="display-5">졸업증명서</h2>
+                                <hr width = "100%" color = "black">
+                                {{#with student}}
+                                    <img src="{{link}}" alt="학력인증" class="card-img-top" height="300px" width="100px">
+                                {{/with}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br>
                     <h3 class="mb-3">인증 여부</h3>
-                    <br>
                     <button id="btn-submit1" class="btn btn-info" onclick="location.href='/Uni'"> 승인 </button>
                     <button id="btn-submit2" class="btn btn-info" onclick="location.href='/Uni'"> 알 수 없음 </button>
                     <button id="btn-submit3" class="btn btn-info" onclick="location.href='/Uni'"> 거절 </button>

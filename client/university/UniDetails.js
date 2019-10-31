@@ -27,6 +27,11 @@ Template.UniDetails.helpers({
         // return Meteor.users.findOne({_id:Meteor.user()._id});
         // return Meteor.users.find({"profile.uniApply":true});
         return Meteor.users.findOne({_id: _id});
+    },
+    link: function() {
+        // 컨테츠 데이터베이스에 저장 되어 있는 파일(이미지)의 _id를 이용하여 실제 링크로 변환하여 전달
+        var userInfo = Meteor.user();
+        return Codeasy.utils.getFileLink(userInfo.profile.uni_file);
     }
 });
 Template.UniDetails.events({

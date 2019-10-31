@@ -77,6 +77,7 @@
           <br>
           항목선택:
           <select name="항목선택" id=spec_What value="항목선택">
+              <option value="해당없음">해당없음</option>
               <option value="자격증/면허증">자격증/면허증</option>
               <option value="어학시험">어학시험</option>
               <option value="수상내역/공모전">수상내역/공모전</option>
@@ -91,8 +92,13 @@
             <input type="text" name="발행처/기관" id=spec_Organization>
             자격증 발급번호:
             <input type="text" name="spec_information" id=spec_Number>
-            <div class="filebox"> <label for="ex_file">파일첨부: </label> <input type="file" id="ex_file"> </div>
-          <br>
+              <br><br>
+              <div class="input-group mb-3">
+                  <div class="custom-file">
+                      <input id="inp-file" type="file" class="custom-file-input">
+                      <label id="lb-file" class="custom-file-label">파일첨부</label>
+                  </div>
+              </div>
           <br>
             취득일:
             <input type="date" id=spec_GetDate>
@@ -100,7 +106,6 @@
           <br><br>
           <fieldset>
               <legend>기타</legend>
-              <br>
                 <img src="/images/SNSImages/facebook.jpg" style="width:50px"><input type="text" name="id" id=spec_Facebook placeholder="facebook" style="width:200px"><br>
                 <img src="/images/SNSImages/insta.jpg" style="width:50px"><input type="text" name="id" id=spec_Instagram placeholder="instagram" style="width:200px"><br>
                 <img src="/images/SNSImages/navercafe.jpg" style="width:50px"><input type="text" name="id" id=spec_Cafe placeholder="네이버 카페" style="width:200px"><br>

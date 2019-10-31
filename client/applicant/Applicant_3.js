@@ -6,6 +6,12 @@ FlowRouter.route('/Applicant_3', {
 
 Template.Applicant_3.events({
   'click #btn-submit': function(evt) {
+
+    var file = $('#inp-file').prop('files')[0];   //화면에서 선택 된 파일 가져오기
+    var db_file = DB_FILES.insert({   //파일 DB에 미리 저장
+      file: file
+
+    });
     evt.preventDefault();
   //  alert(11)
     var com_Name = $('#com_Name').val();
@@ -13,7 +19,7 @@ Template.Applicant_3.events({
     var com_EndDate = $('#com_EndDate').val();
     var com_HowEnd = $('#com_HowEnd').val();
     var com_Number = $('#com_Number').val();
-    var com_File = $('#com_File').val();
+    var com_File = db_file.config.fileId;
     var com_EndReason = $('#com_EndReason').val();
     var com_Position = $('#com_Position').val();
     var com_Field = $('#com_Field').val();
@@ -40,5 +46,10 @@ Template.Applicant_3.events({
         alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
       }
     });
+  },
+  'change #inp-file': function(evt, inst) {
+    //inp-file에서 파일을 선택 시 파일명 시각화
+    var file = $('#inp-file').prop('files')[0];
+    $('#lb-file').text(file.name);
   }
 })
