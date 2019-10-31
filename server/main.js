@@ -234,12 +234,12 @@ Meteor.methods({
     //var userInfo = Meteor.user();
     //if(userInfo.profile.p_Type === "기업"){
     if(com_Author==='승인'){
-      var num1=0;
+      var num1=1;
     }
-    else var num1=1;
-    //account1='profile.accountKey'.toString();
-    //account1=Meteor.users.find({'_id':_id}).profile.accountKey;
+    else var num1=2;
+
     var account1= Meteor.users.findOne({_id:_id}).profile.accountKey;
+
     Meteor.users.update({_id:_id}, {
         $set: {
           'profile.com_Author': com_Author,
@@ -254,19 +254,19 @@ Meteor.methods({
   },
   saveUniAuthor: function(uni_Author,_id){
     if(uni_Author==='승인'){
-      num2=0;
+      var num2=0;
     }
-    else num2=1;
-    //account2='profile.accountKey'.toAddress();
-    //var account2=(Meteor.users.findOne({_id:_id}.accountKey)).toAddress();
-    //account2=Meteor.users.findOne({'_id':_id}).profile.accountKey;
+    else var num2=1;
+
+    var account2= Meteor.users.findOne({_id:_id}).profile.accountKey;
+
     Meteor.users.update({_id:_id}, {
       $set: {
         'profile.uni_Author': uni_Author,
         'profile.uniApply':false
       }
     })
-    //last.setAut_Career(account2,num2,Date.now());
+    last.setAut_Edu(account2,num2,Date.now(),{from:web3.eth.coinbase});
   return "학력 인증이 완료되었습니다."
   },
   saveSubmitAll: function(submitAll,_id){
