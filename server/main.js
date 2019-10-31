@@ -93,10 +93,11 @@ Meteor.methods({
     },function(error,transactionHash){
       if(!error){
         //console.log("Good8");
-        return "경력 인증 완료"
+        return "경력인증 완료"
       }
       else{
-        console.log("Error8");
+        //console.log("Error8");
+        return "에러"
       }
     })
   },
@@ -233,9 +234,9 @@ Meteor.methods({
   saveComAuthor: function(com_Author,_id){
 
     if(com_Author==='승인'){
-      num1=0;
+      var num1=0;
     }
-    else num1=1;
+    else var num1=1;
 
     var account1= Meteor.users.findOne({_id:_id}).profile.accountKey;
     Meteor.users.update({_id:_id}, {
@@ -245,14 +246,12 @@ Meteor.methods({
         }
       })
 
-    //last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
-    Meteor.setAut_Career(account1,num1,Date.now());
-
-  //return "경력 인증이 완료되었습니다."
+    last.setAut_Career(account1,num1,Date.now(),{from:web3.eth.coinbase});
+    return "경력 인증이 완료되었습니다."
   },
   saveUniAuthor: function(uni_Author,_id){
     if(uni_Author==='승인'){
-      num2=0;
+      var num2=0;
     }
     else var num2=1;
 

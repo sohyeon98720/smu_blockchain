@@ -20,14 +20,16 @@ Template.Company_details.events({
     'click #btn-submit1': function(evt) {
         evt.preventDefault();
         var _id = FlowRouter.getParam('_id');
+        var account1= Meteor.users.findOne({_id:_id}).profile.accountKey;
         var com_Author="승인";
         Meteor.call('saveComAuthor',com_Author,_id,function (err,rslt) {
             if(err){
-                alert(err)
+               lert(err)
             }else{
-                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
+               alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
         });
+
     },
     'click #btn-submit2': function(evt) {
         evt.preventDefault();
