@@ -3,18 +3,6 @@ FlowRouter.route('/Applicant_2', {
     BlazeLayout.render('Applicant_2');
   }
 })
-
-
-Template.Applicant_2.onRendered(function() {
-  run = function () {
-    feather.replace()
-
-  };
-  Meteor.setTimeout(function(){
-    run()
-  }, 1000)
-
-});
 //
 // Template.Applicant_2.onRendered(function() {
 //   run = function () {
