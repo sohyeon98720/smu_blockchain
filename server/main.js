@@ -158,7 +158,7 @@ Meteor.methods({
           'profile.uni_Grade': eduData.uni_Grade,
           'profile.uni_Total': eduData.uni_Total,
           'profile.uni_GradeNumber': eduData.uni_GradeNumber,
-          'profile.uni_File': eduData.uni_File,
+          'profile.uni_file': eduData.uni_file,  //파일의 id
           'profile.uni_Journal': eduData.uni_Journal,
           'profile.uni_GraduNumber':uni_GraduNumber
         }
@@ -215,6 +215,7 @@ Meteor.methods({
     last.sendCareer({from:web3.eth.coinbase});
   return "경력 인증 요청이 되었습니다."
   },
+
   saveUniApply: function(uniApply){
     var userInfo = Meteor.user();
     Meteor.users.update({_id: userInfo._id}, {
@@ -226,6 +227,7 @@ Meteor.methods({
     last.sendEdu({from:web3.eth.coinbase});
   return "학력 인증 요청이 되었습니다."
   },
+
   saveComAuthor: function(com_Author,_id){
     //var userInfo = Meteor.user();
     //if(userInfo.profile.p_Type === "기업"){
