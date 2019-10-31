@@ -35,7 +35,6 @@ Template.Company_details.events({
                alert(rslt); //서버 수행 이후 클라이언트에서 실행 될 코드.
             }
         });
-
     },
     'click #btn-submit2': function(evt) {
         evt.preventDefault();

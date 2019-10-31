@@ -12,11 +12,8 @@ FlowRouter.route('/Company_1', {
     }else{
       alert("권한이 없습니다.")
     }
-
   }
 })
-
-
 
 
 // Template.Company_1.onRendered(function() {
