@@ -79,6 +79,7 @@ Template.Applicant_2.events({
     var uni_GradeNumber = $('#uni_GradeNumber').val();
     var uni_file =  $('#inp-file').val();
     var uni_Journal = $('#uni_Journal').val();
+    //var uniApply=false;
 
     var eduData = {
       uni_Year: uni_Year,
