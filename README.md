@@ -37,6 +37,9 @@ __프로젝트 내용__ :
   - __메인화면__:
   <img src="https://user-images.githubusercontent.com/47767202/79295452-a9e9cf00-7f13-11ea-92ba-781dd9feea24.PNG" width="50%">
   <br>
+  
+  
   - __지원자로 로그인했을 때__:
- <img src="https://user-images.githubusercontent.com/47767202/79295603-06e58500-7f14-11ea-853f-2825c6cc627c.PNG" width="50%">
-<img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">
+   <img src="https://user-images.githubusercontent.com/47767202/79295603-06e58500-7f14-11ea-853f-2825c6cc627c.PNG" width="50%">
+ 
+   <img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">
