@@ -21,10 +21,9 @@ __프로젝트 내용__ :
   
   -> 이력/경력 인증을 요청하고 기다리는 동안 새로운 이력/경력을 작성할 수 없음(웹 기능)                      
   -> 인증을 받은 최소 하나 이상의 학력/경력이 존재해야 지원하고자하는 기업에 이력서를 제출할 수 있음(웹 기능)
-<img src="https://user-images.githubusercontent.com/47767202/77847863-22098280-71fb-11ea-96ec-5609d349ff04.png" width="50%">
-<br>
+<img src="https://user-images.githubusercontent.com/47767202/77847863-22098280-71fb-11ea-96ec-5609d349ff04.png" width="50%">    
 
-*=> 기존 이력서 시스템의 문제점 개선*
+  _=> 기존 이력서 시스템의 문제점 개선_
 <br>
 
 - __사용프로그램__: 
@@ -34,3 +33,10 @@ __프로젝트 내용__ :
   
 <br>
 
+- __결과__:
+  - __메인화면__:
+  <img src="https://user-images.githubusercontent.com/47767202/79295452-a9e9cf00-7f13-11ea-92ba-781dd9feea24.PNG" width="50%">
+  <br>
+  - __지원자로 로그인했을 때__:
+ <img src="https://user-images.githubusercontent.com/47767202/79295603-06e58500-7f14-11ea-853f-2825c6cc627c.PNG" width="50%">
+<img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">
