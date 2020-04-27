@@ -17,7 +17,7 @@ __프로젝트 내용__ :
 __1. 사용자 구분__:                    
   <img src="https://user-images.githubusercontent.com/47767202/79406667-a79a7a00-7fd2-11ea-9dcf-1f51ffca4310.JPG">             
   - __지원자__: 기업에 지원. 지원하기 위한 이력서의 세부 항목을 각 관련기관에게 인증받아야함.
-  - __회사__: 지원자로부터 이력서를 받음. 혹은 이력인증 요청 시 이력 인증.
+  - __회사__: 지원자로부터 이력서를 받음. 혹은 경력인증 요청 시 경력 인증.
   - __학교__: 지원자로부터 학력인증 요청 시 학력 인증.
   
 -------
@@ -48,10 +48,17 @@ __4. 결과__:
   <img src="https://user-images.githubusercontent.com/47767202/79295452-a9e9cf00-7f13-11ea-92ba-781dd9feea24.PNG" width="50%">
   <br>
   
-  
-  - __지원자로 로그인했을 때__: 학력 및 이력 작성 후 마이페이지(세번째 사진)에서 전송할 수 있음
+  - __지원자로 로그인했을 때__: 학력 및 경력 작성 후 내 원서함(세번째 사진)페이지에서 전송할 수 있음 + 학력과 경력 모두 승인받은 이력서만 기업에 전송할 수 있음
    <img src="https://user-images.githubusercontent.com/47767202/79295603-06e58500-7f14-11ea-853f-2825c6cc627c.PNG" width="50%">      
    
    <img src="https://user-images.githubusercontent.com/47767202/79295730-6774c200-7f14-11ea-939a-ba83de2b7cf0.PNG" width="50%">    
    
-   <img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">      
+   <img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">   
+   <br>
+   
+  -  __인증)학교/기업으로 로그인했을 때__: 학력/경력 인증하기 페이지에서 지원자의 학력/경력 사실여부 검토 후 인증여부 반환               
+   <img src="https://user-images.githubusercontent.com/47767202/80339015-bae1fb00-8898-11ea-83ca-dea72d075b05.png" width="50%">
+   <br>
+  
+  - __지원자보기)기업으로 로그인했을 때__: 지원자의 이력을 각 해당기관이 모두 인증하였기때문에 위조의 우려없이 이력서 검토가능             
+    <img src="https://user-images.githubusercontent.com/47767202/80339482-b23df480-8899-11ea-8a0a-091fd9a9292c.png" width="50%">
