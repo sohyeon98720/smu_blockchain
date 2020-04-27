@@ -16,7 +16,10 @@ __프로젝트 내용__ :
 
 __1. 사용자__:                    
   <img src="https://user-images.githubusercontent.com/47767202/79406667-a79a7a00-7fd2-11ea-9dcf-1f51ffca4310.JPG">             
-    
+  - __지원자__: 기업에 지원. 지원하기 위한 이력서의 세부 항목을 각 관련기관에게 인증받아야함.
+  - __회사__: 지원자로부터 이력서를 받음. 혹은 이력인증 요청 시 이력 인증.
+  - __학교__: 지원자로부터 학력인증 요청 시 학력 인증.
+  
 -------
 
 __2. 기능__:                        
@@ -47,8 +50,8 @@ __4. 결과__:
   
   
   - __지원자로 로그인했을 때__:
-   <img src="https://user-images.githubusercontent.com/47767202/79295603-06e58500-7f14-11ea-853f-2825c6cc627c.PNG" width="50%">
- 
-   <img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">
+   <img src="https://user-images.githubusercontent.com/47767202/79295603-06e58500-7f14-11ea-853f-2825c6cc627c.PNG" width="50%">      
    
-   <img src="https://user-images.githubusercontent.com/47767202/79295730-6774c200-7f14-11ea-939a-ba83de2b7cf0.PNG" width="50%">
+   <img src="https://user-images.githubusercontent.com/47767202/79295730-6774c200-7f14-11ea-939a-ba83de2b7cf0.PNG" width="50%">    
+   
+   <img src="https://user-images.githubusercontent.com/47767202/77847898-62690080-71fb-11ea-802a-b56ab4934d07.png" width="50%">      
